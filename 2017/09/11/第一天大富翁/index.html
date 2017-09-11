@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>第一天大富翁 | 孤独而又寂寞的狼</title>
+  <title>flex | 孤独而又寂寞的狼</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基本概念采用 Flex 布局的元素，称为 Flex 容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称”项目”">
+  <meta name="description" content="display: flex;对弹性容器设置flex-direction:row | row-reverse | column可以改变flex容器的方向   row定义主轴方向为X轴从左到右 row-reverse 从右到左 column 定义主轴方向为Y轴从上到下 column-reverse 定义主轴方向为Y轴从下到上justify-content flex-start | flex-end |">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一天大富翁">
+<meta property="og:title" content="flex">
 <meta property="og:url" content="http://yoursite.com/2017/09/11/第一天大富翁/index.html">
 <meta property="og:site_name" content="孤独而又寂寞的狼">
-<meta property="og:description" content="基本概念采用 Flex 布局的元素，称为 Flex 容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称”项目”">
+<meta property="og:description" content="display: flex;对弹性容器设置flex-direction:row | row-reverse | column可以改变flex容器的方向   row定义主轴方向为X轴从左到右 row-reverse 从右到左 column 定义主轴方向为Y轴从上到下 column-reverse 定义主轴方向为Y轴从下到上justify-content flex-start | flex-end |">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-11T09:24:38.000Z">
+<meta property="og:updated_time" content="2017-09-11T10:58:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一天大富翁">
-<meta name="twitter:description" content="基本概念采用 Flex 布局的元素，称为 Flex 容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称”项目”">
+<meta name="twitter:title" content="flex">
+<meta name="twitter:description" content="display: flex;对弹性容器设置flex-direction:row | row-reverse | column可以改变flex容器的方向   row定义主轴方向为X轴从左到右 row-reverse 从右到左 column 定义主轴方向为Y轴从上到下 column-reverse 定义主轴方向为Y轴从下到上justify-content flex-start | flex-end |">
   
     <link rel="alternate" href="/atom.xml" title="孤独而又寂寞的狼" type="application/atom+xml">
   
@@ -82,7 +82,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      第一天大富翁
+      flex
     </h1>
   
 
@@ -90,11 +90,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h2 id="采用-Flex-布局的元素，称为-Flex-容器（flex-container），简称”容器”。它的所有子元素自动成为容器成员，称为-Flex-项目（flex-item），简称”项目”"><a href="#采用-Flex-布局的元素，称为-Flex-容器（flex-container），简称”容器”。它的所有子元素自动成为容器成员，称为-Flex-项目（flex-item），简称”项目”" class="headerlink" title="采用 Flex 布局的元素，称为 Flex 容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称”项目”"></a>采用 Flex 布局的元素，称为 Flex 容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称”项目”</h2>
+        <h2 id="display-flex-对弹性容器设置"><a href="#display-flex-对弹性容器设置" class="headerlink" title="display: flex;对弹性容器设置"></a>display: flex;对弹性容器设置</h2><h3 id="flex-direction-row-row-reverse-column"><a href="#flex-direction-row-row-reverse-column" class="headerlink" title="flex-direction:row | row-reverse | column"></a>flex-direction:row | row-reverse | column</h3><p>可以改变flex容器的方向 </p>
+<ul>
+<li>row定义主轴方向为X轴从左到右</li>
+<li>row-reverse 从右到左</li>
+<li>column 定义主轴方向为Y轴从上到下</li>
+<li>column-reverse 定义主轴方向为Y轴从下到上<h3 id="justify-content-flex-start-flex-end-center-space-between-space-around"><a href="#justify-content-flex-start-flex-end-center-space-between-space-around" class="headerlink" title="justify-content flex-start | flex-end | center | space-between | space-around"></a>justify-content flex-start | flex-end | center | space-between | space-around</h3></li>
+<li>flex-start:从行首开始排列。每行第一个弹性元素与行首对齐，同时所有后续的弹性元素与前一个对齐。</li>
+<li>flex-end: 从行尾开始排列。每行最后一个弹性元素与行尾对齐，其他元素将与后一个对齐;</li>
+<li>center:伸缩元素向每行中点排列。每行第一个元素到行首的距离将与每行最后一个元素到行尾的距离相同</li>
+<li>space-between : 在每行上均匀分配弹性元素。相邻元素间距离相同。每行第一个元素与行首对齐，每行最后一个元素与行尾对齐。</li>
+<li>space-around:在每行上均匀分配弹性元素。相邻元素间距离相同。每行第一个元素到行首的距离和每行最后一个元素到行尾的距离将会是相邻元素之间距离的一半。<h3 id="flex-wrap-wrap-nowrap-wrap-reverse"><a href="#flex-wrap-wrap-nowrap-wrap-reverse" class="headerlink" title="flex-wrap:wrap | nowrap | wrap-reverse"></a>flex-wrap:wrap | nowrap | wrap-reverse</h3></li>
+<li>nowrap:flex 的元素被摆放到到一行</li>
+<li>wrap: flex 元素被打断到多个行中，会根据上面设置的属性排列</li>
+<li>wrap-reverse :和 wrap 的行为一样,但会与原来的方向相反<h3 id="align-items-stretch-flex-start-flex-end-center-baseline"><a href="#align-items-stretch-flex-start-flex-end-center-baseline" class="headerlink" title="align-items:stretch | flex-start | flex-end | center | baseline"></a>align-items:stretch | flex-start | flex-end | center | baseline</h3></li>
+<li>stretch默认值。项目被拉伸以适应容器</li>
+<li>flex-start项目位于容器的开头</li>
+<li>flex-end项目位于容器的结尾</li>
+<li>center项目位于容器的中心。</li>
+<li>baseline项目位于容器的基线上<h2 id="对弹性项目进行设置"><a href="#对弹性项目进行设置" class="headerlink" title="对弹性项目进行设置"></a>对弹性项目进行设置</h2></li>
+<li>order:;设置排列顺序 默认为0，必须为整数</li>
+<li>flex-grow 按比例分配容器的宽度，不能设置宽度</li>
+<li>flex-shrink:总宽大于容器按比例分配容器的宽度缩小 </li>
+<li>flex-basis:当成宽度</li>
+<li>flex：组合 flex-grow | flex-shrink | flex-basis 默认值为(0 1 auto)</li>
+<li>align-self: auto | flex-start | flex-end | center | baseline | stretch;针对当前自身设置的默认值：stretch，与弹性容器的align-items类似。</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/11/第一天大富翁/" data-id="cj7fzke04000104yrqkdkkhvy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/11/第一天大富翁/" data-id="cj7g224yp0000hfyrvdk8sei2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -143,7 +169,7 @@
       <ul>
         
           <li>
-            <a href="/2017/09/11/第一天大富翁/">第一天大富翁</a>
+            <a href="/2017/09/11/第一天大富翁/">flex</a>
           </li>
         
           <li>
