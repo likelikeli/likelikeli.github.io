@@ -5,17 +5,19 @@
   
   <title>preserve-3d | web前端</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="舞台层 景深层 perspective: 1600px; 形变中心点perspective-origin: 0px 0px; 形变中心点transform-origin: center center; 3d中心层就是围绕运动的层下面用几个例子来介绍3d动画 例1正方体代码&amp;lt;!DOCTYPE html&amp;gt;    魔方   body{     background: black; } .pp">
+  <meta name="description" content="舞台层 景深层 perspective: 1600px; 形变中心点perspective-origin: 0px 0px; 形变中心点transform-origin: center center; 3d中心层就是围绕运动的层下面用几个例子来介绍3d动画 例1正方体代码&amp;lt;!DOCTYPE html&amp;gt;   &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="preserve-3d">
 <meta property="og:url" content="http://yoursite.com/2017/09/13/preserve-3d/index.html">
 <meta property="og:site_name" content="web前端">
-<meta property="og:description" content="舞台层 景深层 perspective: 1600px; 形变中心点perspective-origin: 0px 0px; 形变中心点transform-origin: center center; 3d中心层就是围绕运动的层下面用几个例子来介绍3d动画 例1正方体代码&amp;lt;!DOCTYPE html&amp;gt;    魔方   body{     background: black; } .pp">
+<meta property="og:description" content="舞台层 景深层 perspective: 1600px; 形变中心点perspective-origin: 0px 0px; 形变中心点transform-origin: center center; 3d中心层就是围绕运动的层下面用几个例子来介绍3d动画 例1正方体代码&amp;lt;!DOCTYPE html&amp;gt;   &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-13T11:32:34.000Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6863738-e37a47d7ed8de538.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-09-13T11:39:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="preserve-3d">
-<meta name="twitter:description" content="舞台层 景深层 perspective: 1600px; 形变中心点perspective-origin: 0px 0px; 形变中心点transform-origin: center center; 3d中心层就是围绕运动的层下面用几个例子来介绍3d动画 例1正方体代码&amp;lt;!DOCTYPE html&amp;gt;    魔方   body{     background: black; } .pp">
+<meta name="twitter:description" content="舞台层 景深层 perspective: 1600px; 形变中心点perspective-origin: 0px 0px; 形变中心点transform-origin: center center; 3d中心层就是围绕运动的层下面用几个例子来介绍3d动画 例1正方体代码&amp;lt;!DOCTYPE html&amp;gt;   &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/6863738-e37a47d7ed8de538.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternate" href="/atom.xml" title="web前端" type="application/atom+xml">
   
@@ -95,117 +97,138 @@
 <li>形变中心点perspective-origin: 0px 0px;</li>
 <li><p>形变中心点transform-origin: center center;</p>
 <h2 id="3d中心层"><a href="#3d中心层" class="headerlink" title="3d中心层"></a>3d中心层</h2><p>就是围绕运动的层<br>下面用几个例子来介绍3d动画</p>
-<h3 id="例1正方体"><a href="#例1正方体" class="headerlink" title="例1正方体"></a>例1正方体</h3><p>代码<br>&lt;!DOCTYPE html&gt;<br><html lang="en"><br><head><br>  <meta charset="UTF-8"><br>  <title>魔方</title><br>  <style type="text/css"></p>
-<pre><code>body{
-    background: black;
-}
-.pp{
-    perspective: 1600px;
+<h3 id="例1正方体"><a href="#例1正方体" class="headerlink" title="例1正方体"></a>例1正方体</h3><p>代码<br>&lt;!DOCTYPE html&gt;<br><html lang="en"><br>  <head></head></html></p>
+<pre><code>&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;魔方&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+    body{
+        background: black;
+    }
+    .pp{
+        perspective: 1600px;
 
-}
-.wrap{
-    transform-style: preserve-3d;
-    transform: rotateX(30deg) rotateY(30deg);
-    width: 200px;
-    height: 200px;
-    margin: 200px auto;
-    position: relative;
-    animation: donghua 2s linear infinite;
-
-}
-@keyframes donghua{
-    0%{
+    }
+    .wrap{
+        transform-style: preserve-3d;
         transform: rotateX(30deg) rotateY(30deg);
-    }
-    100%{
-        transform: rotateX(360deg) rotateY(360deg);
-    }
-}
-.wrap div{
-    width: 210px;
-    height: 210px;
-    position: absolute;
-    border: 1px solid yellow;
-    background-color: black;
-    box-shadow: 0 0 20px 2px yellow;
-    color: white;
-    font-size: 50px;
-    text-align: center;
-    line-height: 210px;
-    text-shadow: 5px 5px 20px red ;
-    opacity: 0.5;
-
-}
-.box1{
-    background: red;
-    transform: translateZ(105px);
-
-}
-.box2{
-    background: orange;
-    transform: translateZ(-105px);
-
-}
-.box3{
-    background: blue;
-
-    transform: translateX(105px)rotateY(90deg);
-</code></pre></li>
-</ul>
-<pre><code>    }
-    .box4{
-        background: green;
-        transform: translateX(-105px)rotateY(90deg);
+        width: 200px;
+        height: 200px;
+        margin: 200px auto;
+        position: relative;
+        animation: donghua 2s linear infinite;
 
     }
-    .box5{
-        background: cyan;
-        transform: translateY(-105px)rotateX(90deg);
+    @keyframes donghua{
+        0%{
+            transform: rotateX(30deg) rotateY(30deg);
+        }
+        100%{
+            transform: rotateX(360deg) rotateY(360deg);
+        }
+    }
+    .wrap div{
+        width: 210px;
+        height: 210px;
+        position: absolute;
+        border: 1px solid yellow;
+        background-color: black;
+        box-shadow: 0 0 20px 2px yellow;
+        color: white;
+        font-size: 50px;
+        text-align: center;
+        line-height: 210px;
+        text-shadow: 5px 5px 20px red ;
+        opacity: 0.5;
 
     }
-    .box6{
-        background: purple;
-        transform: translateY(105px)rotateX(90deg);
-
-    }
-    .box7{
+    .box1{
         background: red;
-        transform: translateZ(35px);
+        transform: translateZ(105px);
 
     }
-    .box8{
+    .box2{
         background: orange;
-        transform: translateZ(-35px);
+        transform: translateZ(-105px);
 
     }
-    .box9{
+    .box3{
         background: blue;
 
-        transform: translateX(35px)rotateY(90deg);
+        transform: translateX(105px)rotateY(90deg);
+</code></pre></li>
+</ul>
+<pre><code>        }
+        .box4{
+            background: green;
+            transform: translateX(-105px)rotateY(90deg);
+
+        }
+        .box5{
+            background: cyan;
+            transform: translateY(-105px)rotateX(90deg);
+
+        }
+        .box6{
+            background: purple;
+            transform: translateY(105px)rotateX(90deg);
+
+        }
+        .box7{
+            background: red;
+            transform: translateZ(35px);
+
+        }
+        .box8{
+            background: orange;
+            transform: translateZ(-35px);
+
+        }
+        .box9{
+            background: blue;
+
+            transform: translateX(35px)rotateY(90deg);
 
 
-    }
-    .box10{
-        background: green;
-        transform: translateX(-35px)rotateY(90deg);
+        }
+        .box10{
+            background: green;
+            transform: translateX(-35px)rotateY(90deg);
 
-    }
-    .box11{
-        background: cyan;
-        transform: translateY(-35px)rotateX(90deg);
+        }
+        .box11{
+            background: cyan;
+            transform: translateY(-35px)rotateX(90deg);
 
-    }
-    .box12{
-        background: purple;
-        transform: translateY(35px)rotateX(90deg);
+        }
+        .box12{
+            background: purple;
+            transform: translateY(35px)rotateX(90deg);
 
-    }
-&lt;/style&gt;
-</code></pre><p></head></p>
-<p><body><br>    <div class="pp"><br>        <div class="wrap"><br>            <div class="box1">1</div><br>            <div class="box2">2</div><br>            <div class="box3">3</div><br>            <div class="box4">4</div><br>            <div class="box5">5</div><br>            <div class="box6">6</div><br>            <div class="box7">7</div><br>            <div class="box8">8</div><br>            <div class="box9">9</div><br>            <div class="box10">10</div><br>            <div class="box11">11</div><br>            <div class="box12">12</div><br>        </div><br>    </div><br></body><br></html><br>代码运行图</p>
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;pp&quot;&gt;
+        &lt;div class=&quot;wrap&quot;&gt;
+            &lt;div class=&quot;box1&quot;&gt;1&lt;/div&gt;
+            &lt;div class=&quot;box2&quot;&gt;2&lt;/div&gt;
+            &lt;div class=&quot;box3&quot;&gt;3&lt;/div&gt;
+            &lt;div class=&quot;box4&quot;&gt;4&lt;/div&gt;
+            &lt;div class=&quot;box5&quot;&gt;5&lt;/div&gt;
+            &lt;div class=&quot;box6&quot;&gt;6&lt;/div&gt;
+            &lt;div class=&quot;box7&quot;&gt;7&lt;/div&gt;
+            &lt;div class=&quot;box8&quot;&gt;8&lt;/div&gt;
+            &lt;div class=&quot;box9&quot;&gt;9&lt;/div&gt;
+            &lt;div class=&quot;box10&quot;&gt;10&lt;/div&gt;
+            &lt;div class=&quot;box11&quot;&gt;11&lt;/div&gt;
+            &lt;div class=&quot;box12&quot;&gt;12&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p><br>代码运行图</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/6863738-e37a47d7ed8de538.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="95F3F253-5A5E-467D-8F3D-25F893B95F41.png"></p>
 <p>###例2 圈图<br>代码<br>&lt;!DOCTYPE html&gt;</p>
-<p><html lang="en"></p>
+<p><html lang="en"></html></p>
 <p><head><br>    <meta charset="UTF-8"><br>    <title>圈</title><br>    <style type="text/css"><br>        body{<br>            background: gray;<br>        }<br>        .box{<br>            perspective: 2600px;<br>        }<br>        .wrap{<br>            width: 200px;<br>            height: 200px;<br>            border: 1px solid red;<br>            transform-style: preserve-3d;<br>            position: relative;<br>            margin: 300px auto;<br>            transform: rotateX(-10deg)rotateY(10deg);<br>            animation: donghua 30s linear infinite;</p>
 <pre><code>    }
     @keyframes donghua{
@@ -499,11 +522,11 @@
 </code></pre><p></head></p>
 <p><body><br>    <div class="box"><br>        <div class="wrap"><br>            <div class="box1">活</div><br>            <div class="box2">半</div><br>            <div class="box3">步</div><br>            <div class="box4">你</div><br>            <div class="box5">若</div><br>            <div class="box6">平</div><br>            <div class="box7">凡</div><br>            <div class="box8">就</div><br>            <div class="box9">随</div><br>            <div class="box10">时</div><br>            <div class="box11">光</div><br>            <div class="box12">一</div><br>            <div class="box13">起</div><br>            <div class="box14">平</div><br>            <div class="box15">凡</div><br>            <div class="box16">各</div><br>            <div class="box17">自</div><br>            <div class="box18">安</div><br>            <div class="box19">好</div><br>            <div class="box20">你</div><br>            <div class="box21">若</div><br>            <div class="box22">幸</div><br>            <div class="box23">福</div><br>            <div class="box24">，</div><br>            <div class="box25">便</div><br>            <div class="box26">飞</div><br>            <div class="box27">到</div><br>            <div class="box28">天</div><br>            <div class="box29">边</div><br>            <div class="box30">不</div><br>            <div class="box31">再</div><br>            <div class="box32">踏</div><br>            <div class="box33">足</div><br>            <div class="box34">我</div><br>            <div class="box35">的</div><br>            <div class="box36">生</div><br>        </div><br>    </div><br></body><br></html><br>运行结果：</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/6863738-4f09442fbd50989c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="AFA823FB-566D-4175-93CA-24CC2EB5F4FC.png"><br>通过这些例子估计也弄懂了3d效果了，由于是动画，现又不支持动画截图，如果想看动画效果的话，自己复制代码可以看到。有关3d效果就到这里了。</p>
-</style></head></html></p></li></ul>
+</style></head></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/13/preserve-3d/" data-id="cj7iy9kon00017xyrhie61roz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/13/preserve-3d/" data-id="cj7iyex2d00019fyrf6esn3wh" class="article-share-link">Share</a>
       
       
     </footer>
