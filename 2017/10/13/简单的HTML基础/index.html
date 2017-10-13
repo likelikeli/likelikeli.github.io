@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>简单的HTML基础 | web前端</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="标签的分类：block inline inline-block； block ：独占一行 ；可以设置尺寸；没有明确宽度的时候，宽度由父级决定 ；没有明确高度的时候，高度由内容决定 inline：不会独占一行，可以与其他行级元素并排 ；.不支持尺寸设置 inline-block：不会独占一行，可以与其他行级元素并排 ；.支持尺寸设置盒模型 标准盒模型：内容尺寸：width*height盒子尺寸：（w">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简单的HTML基础">
+<meta property="og:url" content="http://yoursite.com/2017/10/13/简单的HTML基础/index.html">
+<meta property="og:site_name" content="web前端">
+<meta property="og:description" content="标签的分类：block inline inline-block； block ：独占一行 ；可以设置尺寸；没有明确宽度的时候，宽度由父级决定 ；没有明确高度的时候，高度由内容决定 inline：不会独占一行，可以与其他行级元素并排 ；.不支持尺寸设置 inline-block：不会独占一行，可以与其他行级元素并排 ；.支持尺寸设置盒模型 标准盒模型：内容尺寸：width*height盒子尺寸：（w">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-10-13T14:13:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="简单的HTML基础">
+<meta name="twitter:description" content="标签的分类：block inline inline-block； block ：独占一行 ；可以设置尺寸；没有明确宽度的时候，宽度由父级决定 ；没有明确高度的时候，高度由内容决定 inline：不会独占一行，可以与其他行级元素并排 ；.不支持尺寸设置 inline-block：不会独占一行，可以与其他行级元素并排 ；.支持尺寸设置盒模型 标准盒模型：内容尺寸：width*height盒子尺寸：（w">
+  
+    <link rel="alternate" href="/atom.xml" title="web前端" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">web前端</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">前端一些简单的基础</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-简单的HTML基础" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/13/简单的HTML基础/" class="article-date">
+  <time datetime="2017-10-13T14:04:56.000Z" itemprop="datePublished">2017-10-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      简单的HTML基础
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="标签的分类：block-inline-inline-block；"><a href="#标签的分类：block-inline-inline-block；" class="headerlink" title="标签的分类：block inline inline-block；"></a>标签的分类：block inline inline-block；</h3><ul>
+<li>block ：独占一行 ；可以设置尺寸；没有明确宽度的时候，宽度由父级决定 ；没有明确高度的时候，高度由内容决定</li>
+<li>inline：不会独占一行，可以与其他行级元素并排 ；.不支持尺寸设置</li>
+<li>inline-block：不会独占一行，可以与其他行级元素并排 ；.支持尺寸设置<h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3></li>
+<li>标准盒模型：内容尺寸：width*height<pre><code>盒子尺寸：（width+border+padding）*（height+border+padding）
+区域尺寸：（width+border+margin+padding）*（height+border+padding+margin）
+</code></pre></li>
+<li>怪异盒模型：内容尺寸：（width-border-padding）*（height-border-padding）<pre><code>盒子尺寸：width*height
+区域尺寸：（width+margin）*（height+margin）
+</code></pre><h3 id="样式表的分类及优缺点"><a href="#样式表的分类及优缺点" class="headerlink" title="样式表的分类及优缺点"></a>样式表的分类及优缺点</h3></li>
+<li>行间样式表优缺点<pre><code>优点：不会产生额外的请求
+缺点：容易产生代码冗余，导致文档体积变大
+     不利于维护，不符合结构和样式分离的规范
+</code></pre></li>
+<li>内部样式优缺点<pre><code>缺点：代码复用不方便 
+优点：初步实现结构和样式的分离
+     不会产生额外的请求
+</code></pre></li>
+<li>外部样式表优缺点<pre><code>优点：
+    便于后期维护
+    可以重复使用
+    完全实现结构和样式的分离
+缺点：
+    会产生额外的请求
+</code></pre><h3 id="基础选择器：统配选择器，标签选择器，类选择器，群组选择器，后代选择器"><a href="#基础选择器：统配选择器，标签选择器，类选择器，群组选择器，后代选择器" class="headerlink" title="基础选择器：统配选择器，标签选择器，类选择器，群组选择器，后代选择器"></a>基础选择器：统配选择器，标签选择器，类选择器，群组选择器，后代选择器</h3><h3 id="选择器的优先级"><a href="#选择器的优先级" class="headerlink" title="选择器的优先级"></a>选择器的优先级</h3>*&lt;tags&lt;class&lt;id&lt;style&lt;important</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/13/简单的HTML基础/" data-id="cj8pyyhu100000myr625e2jom" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/12/移动端布局/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">移动端布局</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/10/13/简单的HTML基础/">简单的HTML基础</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/12/移动端布局/">移动端布局</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/11/第一天大富翁/">flex</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/11/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 李可利<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
