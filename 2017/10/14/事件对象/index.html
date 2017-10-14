@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>事件对象 | web前端</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="键盘事件对象keydown支持特殊按键，比如ALT CTRL Command等等，但不区分大小写A和a的keyCode都是65keypress不支持特殊按键，但区分大小写 document.onkeydown=function(){     // 获取事件对象可以使用window.event。 注意：在火狐获取不到     console.log(window.event);     // 在火狐">
+<meta property="og:type" content="article">
+<meta property="og:title" content="事件对象">
+<meta property="og:url" content="http://yoursite.com/2017/10/14/事件对象/index.html">
+<meta property="og:site_name" content="web前端">
+<meta property="og:description" content="键盘事件对象keydown支持特殊按键，比如ALT CTRL Command等等，但不区分大小写A和a的keyCode都是65keypress不支持特殊按键，但区分大小写 document.onkeydown=function(){     // 获取事件对象可以使用window.event。 注意：在火狐获取不到     console.log(window.event);     // 在火狐">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-10-14T02:53:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="事件对象">
+<meta name="twitter:description" content="键盘事件对象keydown支持特殊按键，比如ALT CTRL Command等等，但不区分大小写A和a的keyCode都是65keypress不支持特殊按键，但区分大小写 document.onkeydown=function(){     // 获取事件对象可以使用window.event。 注意：在火狐获取不到     console.log(window.event);     // 在火狐">
+  
+    <link rel="alternate" href="/atom.xml" title="web前端" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">web前端</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">前端一些简单的基础</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-事件对象" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/14/事件对象/" class="article-date">
+  <time datetime="2017-10-14T02:46:33.000Z" itemprop="datePublished">2017-10-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      事件对象
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="键盘事件对象"><a href="#键盘事件对象" class="headerlink" title="键盘事件对象"></a>键盘事件对象</h3><p>keydown支持特殊按键，比如ALT CTRL Command等等，但不区分大小写A和a的keyCode都是65<br>keypress不支持特殊按键，但区分大小写</p>
+<pre><code>document.onkeydown=function(){
+    // 获取事件对象可以使用window.event。 注意：在火狐获取不到
+    console.log(window.event);
+    // 在火狐需要通过参数获取
+    //console.log(ev);
+    // 兼容性的写法
+    var evObj=window.event || ev ;
+    console.log(evObj.keyCode);
+    // 如何判断是否按了组合键
+    if(evObj.keyCode==67 &amp;&amp; evObj.metaKey){
+        console.log(&quot;按了commond+c&quot;)
+    }
+</code></pre><p>一个简单的键盘事件小例子，利用方向键使div移动</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;使用方向键使div移动&lt;/title&gt;
+        &lt;style type=&quot;text/css&quot;&gt;
+            body{
+                margin: 0 auto;
+                position: relative;
+            }
+            .redDiv{
+                width: 100px;
+                height: 100px;
+                background: red;
+                position: absolute;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;redDiv&quot;&gt;&lt;/div&gt;
+    &lt;/body&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        var redDiv=document.getElementsByClassName(&quot;redDiv&quot;)[0];
+        var boolArr=[false,false,false,false];
+        document.onkeydown=function(ev){
+            var evObj=window.event || ev ;
+            boolArr[evObj.keyCode-37]=true;
+        }
+        document.onkeyup=function(ev){
+            var evObj=window.event || ev ;
+            boolArr[evObj.keyCode-37]=false;
+        }
+        setInterval(function(){
+            var speed=5;
+            var leftSpeed=(boolArr[2]-boolArr[0])*speed;
+            var topSpeed=(boolArr[3]-boolArr[1])*speed;
+            redDiv.style.left=redDiv.offsetLeft+leftSpeed+&quot;px&quot;;
+            redDiv.style.top=redDiv.offsetTop+topSpeed+&quot;px&quot;;
+        },20)
+    &lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h3 id="鼠标事件对象"><a href="#鼠标事件对象" class="headerlink" title="鼠标事件对象"></a>鼠标事件对象</h3><pre><code>var box=document.getElementsByClassName(&quot;box&quot;)[0];
+var redDiv=document.getElementsByClassName(&quot;redDiv&quot;)[0];
+box.onclick=function(ev){
+    var evObj=window.event || ev;
+    // evObj.target触发事件的元素，不一定是绑定事件的元素
+    //console.log(evObj.target);
+    console.log(evObj.offsetY);
+    //触发事件的元素，不是绑定的元素，鼠标距离自身的Y轴距离
+    console.log(evObj.clientY);
+    //鼠标距离屏幕的Y轴的距离
+    console.log(evObj.pageY);
+    //鼠标距离页面的Y轴的距离
+}
+</code></pre><p>鼠标拖拽使元素移动</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;鼠标拖拽&lt;/title&gt;
+        &lt;style type=&quot;text/css&quot;&gt;
+            #redDiv{
+                width: 100px;
+                height: 100px;
+                background: red;
+                position: absolute;
+            }
+            body{
+                height: 2000px;
+                position: relative;
+            }
+            #box{
+                width: 600px;
+                height: 600px;
+                border: 10px solid green;
+                position: absolute;
+                top: 1000px;
+                left: 200px;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id=&quot;box&quot;&gt;
+            &lt;div id=&quot;redDiv&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;        
+    &lt;/body&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        var redDiv=document.getElementById(&quot;redDiv&quot;);
+        var box=document.getElementById(&quot;box&quot;);
+        redDiv.onmousedown=function(ev){
+            var offsetX=ev.offsetX;
+            var offsetY=ev.offsetY;
+            document.onmousemove=function(ev){
+                var evObj=window.event || ev ;
+                var x=ev.pageX-box.offsetLeft-offsetX-18;
+                var y=ev.pageY-box.offsetTop-offsetY-18;                
+                if(x&lt;0){
+                    x=0;
+                }else if(x&gt;500){
+                    x=500;
+                }
+                if(y&lt;0){
+                    y=0;
+                }else if(y&gt;500){
+                    y=500;
+                }
+                redDiv.style.left=x+&quot;px&quot;;
+                redDiv.style.top=y+&quot;px&quot;;
+            }
+        }
+        redDiv.onmouseup=function(){
+            document.onmousemove=null;
+        }
+    &lt;/script&gt;
+&lt;/html&gt;
+</code></pre><p>通过例子可以让我们更加理解知识点。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/14/事件对象/" data-id="cj8qqa9nq0003vyyrrx362js5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/14/事件/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">事件的分类</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/10/14/事件对象/">事件对象</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/14/事件/">事件的分类</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/14/简易版时钟/">简易版时钟</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/14/碰壁反弹/">碰壁反弹</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/13/background以及float的设置/">background以及float的设置</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 李可利<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
