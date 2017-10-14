@@ -66,6 +66,185 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-简易版时钟" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/14/简易版时钟/" class="article-date">
+  <time datetime="2017-10-14T01:52:21.000Z" itemprop="datePublished">2017-10-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/14/简易版时钟/">简易版时钟</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>自己编写的简单的时钟，代码很简单，很容易看懂<br>代码：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;时钟&lt;/title&gt;
+        &lt;style type=&quot;text/css&quot;&gt;
+            .wrap{
+                width: 300px;
+                height: 300px;
+                border: 10px solid black;
+                box-shadow: 2px 0px 3px 3px gray inset;
+                border-radius: 50%;
+                position: relative;
+                margin: 200px auto;
+                background: url(&quot;1.jpg&quot;)no-repeat;
+                background-size: 300px 300px;
+            }
+            .box{
+                width: 280px;
+                height: 20px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;                
+            }
+            .box span{
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                text-align: center;
+                float: left;
+                color: white;
+            }            
+            .box1{
+                width: 10px ;
+                height: 10px;
+                border-radius: 50%;
+                background: black;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                z-index: 4;
+            }
+            #ho{
+                width: 10px;
+                height: 80px;
+                background: green;
+                position: absolute;
+                transform-origin:5px 100%;
+                top: 70px;
+                left: 145px;
+                border-top-left-radius: 5px 60px;
+                border-top-right-radius: 5px 60px;
+                z-index: 3;
+            }
+            #min{
+                width: 8px;
+                height: 100px;
+                background: red;
+                position: absolute;
+                transform-origin:4px 100%;
+                top: 50px;
+                left: 146px;
+                border-top-left-radius: 5px 60px;
+                border-top-right-radius: 5px 60px;
+                z-index: 2;
+            }
+            #sec{
+                width: 6px;
+                height: 120px;
+                background: blue;
+                position: absolute;
+                border-top-left-radius: 5px 60px;
+                border-top-right-radius: 5px 60px;
+                transform-origin:3px 100%;
+                top: 30px;
+                left: 147px;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;wrap&quot;&gt;
+            &lt;!-- div.box(span{$})*12 --&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;9&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;10&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;11&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;12&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;1&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;2&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;3&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;4&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;5&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;6&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;7&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;8&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box1&quot;&gt;&lt;/div&gt;
+            &lt;div id=&quot;ho&quot;&gt;&lt;/div&gt;
+            &lt;div id=&quot;min&quot;&gt;&lt;/div&gt;
+            &lt;div id=&quot;sec&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        var box=document.getElementsByClassName(&quot;box&quot;);
+        var span=document.getElementsByTagName(&quot;span&quot;);
+        var ho=document.getElementById(&quot;ho&quot;);
+        var min=document.getElementById(&quot;min&quot;);
+        var sec=document.getElementById(&quot;sec&quot;);
+        for(var i=0;i&lt;12;i++){
+            a=30*i;
+            b=(-30)*i;
+            box[i].style.transform=&apos;rotate(&apos;+a+&apos;deg)&apos;;
+            span[i].style.transform=&apos;rotate(&apos;+b+&apos;deg)&apos;;
+        }
+        var date=new Date();
+            var minutes=date.getMinutes();
+            var hours=date.getHours();
+            var seconds=date.getSeconds();
+            var c=hours*30+(minutes/60)*30+(seconds/60/60)*30;
+            var d=minutes*6+(seconds/60)*6;
+            var e=seconds*6;
+            ho.style.transform=&apos;rotate(&apos;+c+&apos;deg)&apos;;
+            min.style.transform=&apos;rotate(&apos;+d+&apos;deg)&apos;;
+            sec.style.transform=&apos;rotate(&apos;+e+&apos;deg)&apos;;
+        setInterval(function(){
+            var date=new Date();
+            var minutes=date.getMinutes();
+            var hours=date.getHours();
+            var seconds=date.getSeconds();
+            var c=hours*30+(minutes/60)*30+(seconds/60/60)*30;
+            var d=minutes*6+(seconds/60)*6;
+            var e=seconds*6;
+            ho.style.transform=&apos;rotate(&apos;+c+&apos;deg)&apos;;
+            min.style.transform=&apos;rotate(&apos;+d+&apos;deg)&apos;;
+            sec.style.transform=&apos;rotate(&apos;+e+&apos;deg)&apos;;
+        },1000)        
+    &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/14/简易版时钟/" data-id="cj8qo4z2d0003g8yrwkht2ecp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-碰壁反弹" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/10/14/碰壁反弹/" class="article-date">
@@ -134,7 +313,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/碰壁反弹/" data-id="cj8qnps7y0001hryr5gdv1yv1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/碰壁反弹/" data-id="cj8qo4z1q0000g8yrcm5lizxa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -195,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/13/background以及float的设置/" data-id="cj8qnps8a0004hryrpictm22i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/13/background以及float的设置/" data-id="cj8qo4z2f0004g8yr3see9a59" class="article-share-link">Share</a>
       
       
     </footer>
@@ -257,7 +436,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/13/简单的HTML基础/" data-id="cj8qnps850003hryrmnabj0k1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/13/简单的HTML基础/" data-id="cj8qo4z200002g8yrvhrg2jr1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -300,7 +479,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/12/移动端布局/" data-id="cj8qnps7o0000hryru8v2ghti" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/12/移动端布局/" data-id="cj8qo4z1w0001g8yr5rvh6qye" class="article-share-link">Share</a>
       
       
     </footer>
@@ -362,7 +541,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/11/第一天大富翁/" data-id="cj8qnps8h0005hryrr1353a0l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/11/第一天大富翁/" data-id="cj8qo4z2y0006g8yrd4d8pd22" class="article-share-link">Share</a>
       
       
     </footer>
@@ -407,7 +586,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/11/hello-world/" data-id="cj8qnps820002hryrj6cej451" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/11/hello-world/" data-id="cj8qo4z2w0005g8yr0k63au1q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -447,6 +626,10 @@
       <ul>
         
           <li>
+            <a href="/2017/10/14/简易版时钟/">简易版时钟</a>
+          </li>
+        
+          <li>
             <a href="/2017/10/14/碰壁反弹/">碰壁反弹</a>
           </li>
         
@@ -460,10 +643,6 @@
         
           <li>
             <a href="/2017/09/12/移动端布局/">移动端布局</a>
-          </li>
-        
-          <li>
-            <a href="/2017/09/11/第一天大富翁/">flex</a>
           </li>
         
       </ul>

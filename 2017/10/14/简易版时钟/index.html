@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>简易版时钟 | web前端</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="自己编写的简单的时钟，代码很简单，很容易看懂代码： &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;     &amp;lt;head&amp;gt;         &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;         &amp;lt;title&amp;gt;时钟&amp;lt;/title&amp;gt;         &amp;lt;style">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简易版时钟">
+<meta property="og:url" content="http://yoursite.com/2017/10/14/简易版时钟/index.html">
+<meta property="og:site_name" content="web前端">
+<meta property="og:description" content="自己编写的简单的时钟，代码很简单，很容易看懂代码： &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;     &amp;lt;head&amp;gt;         &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;         &amp;lt;title&amp;gt;时钟&amp;lt;/title&amp;gt;         &amp;lt;style">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-10-14T01:53:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="简易版时钟">
+<meta name="twitter:description" content="自己编写的简单的时钟，代码很简单，很容易看懂代码： &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;     &amp;lt;head&amp;gt;         &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;         &amp;lt;title&amp;gt;时钟&amp;lt;/title&amp;gt;         &amp;lt;style">
+  
+    <link rel="alternate" href="/atom.xml" title="web前端" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">web前端</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">前端一些简单的基础</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-简易版时钟" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/14/简易版时钟/" class="article-date">
+  <time datetime="2017-10-14T01:52:21.000Z" itemprop="datePublished">2017-10-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      简易版时钟
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>自己编写的简单的时钟，代码很简单，很容易看懂<br>代码：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;时钟&lt;/title&gt;
+        &lt;style type=&quot;text/css&quot;&gt;
+            .wrap{
+                width: 300px;
+                height: 300px;
+                border: 10px solid black;
+                box-shadow: 2px 0px 3px 3px gray inset;
+                border-radius: 50%;
+                position: relative;
+                margin: 200px auto;
+                background: url(&quot;1.jpg&quot;)no-repeat;
+                background-size: 300px 300px;
+            }
+            .box{
+                width: 280px;
+                height: 20px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;                
+            }
+            .box span{
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                text-align: center;
+                float: left;
+                color: white;
+            }            
+            .box1{
+                width: 10px ;
+                height: 10px;
+                border-radius: 50%;
+                background: black;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                z-index: 4;
+            }
+            #ho{
+                width: 10px;
+                height: 80px;
+                background: green;
+                position: absolute;
+                transform-origin:5px 100%;
+                top: 70px;
+                left: 145px;
+                border-top-left-radius: 5px 60px;
+                border-top-right-radius: 5px 60px;
+                z-index: 3;
+            }
+            #min{
+                width: 8px;
+                height: 100px;
+                background: red;
+                position: absolute;
+                transform-origin:4px 100%;
+                top: 50px;
+                left: 146px;
+                border-top-left-radius: 5px 60px;
+                border-top-right-radius: 5px 60px;
+                z-index: 2;
+            }
+            #sec{
+                width: 6px;
+                height: 120px;
+                background: blue;
+                position: absolute;
+                border-top-left-radius: 5px 60px;
+                border-top-right-radius: 5px 60px;
+                transform-origin:3px 100%;
+                top: 30px;
+                left: 147px;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;wrap&quot;&gt;
+            &lt;!-- div.box(span{$})*12 --&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;9&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;10&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;11&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;12&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;1&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;2&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;3&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;4&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;5&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;6&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;7&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;8&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;box1&quot;&gt;&lt;/div&gt;
+            &lt;div id=&quot;ho&quot;&gt;&lt;/div&gt;
+            &lt;div id=&quot;min&quot;&gt;&lt;/div&gt;
+            &lt;div id=&quot;sec&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        var box=document.getElementsByClassName(&quot;box&quot;);
+        var span=document.getElementsByTagName(&quot;span&quot;);
+        var ho=document.getElementById(&quot;ho&quot;);
+        var min=document.getElementById(&quot;min&quot;);
+        var sec=document.getElementById(&quot;sec&quot;);
+        for(var i=0;i&lt;12;i++){
+            a=30*i;
+            b=(-30)*i;
+            box[i].style.transform=&apos;rotate(&apos;+a+&apos;deg)&apos;;
+            span[i].style.transform=&apos;rotate(&apos;+b+&apos;deg)&apos;;
+        }
+        var date=new Date();
+            var minutes=date.getMinutes();
+            var hours=date.getHours();
+            var seconds=date.getSeconds();
+            var c=hours*30+(minutes/60)*30+(seconds/60/60)*30;
+            var d=minutes*6+(seconds/60)*6;
+            var e=seconds*6;
+            ho.style.transform=&apos;rotate(&apos;+c+&apos;deg)&apos;;
+            min.style.transform=&apos;rotate(&apos;+d+&apos;deg)&apos;;
+            sec.style.transform=&apos;rotate(&apos;+e+&apos;deg)&apos;;
+        setInterval(function(){
+            var date=new Date();
+            var minutes=date.getMinutes();
+            var hours=date.getHours();
+            var seconds=date.getSeconds();
+            var c=hours*30+(minutes/60)*30+(seconds/60/60)*30;
+            var d=minutes*6+(seconds/60)*6;
+            var e=seconds*6;
+            ho.style.transform=&apos;rotate(&apos;+c+&apos;deg)&apos;;
+            min.style.transform=&apos;rotate(&apos;+d+&apos;deg)&apos;;
+            sec.style.transform=&apos;rotate(&apos;+e+&apos;deg)&apos;;
+        },1000)        
+    &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/14/简易版时钟/" data-id="cj8qo4z2d0003g8yrwkht2ecp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/14/碰壁反弹/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">碰壁反弹</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/10/14/简易版时钟/">简易版时钟</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/14/碰壁反弹/">碰壁反弹</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/13/background以及float的设置/">background以及float的设置</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/13/简单的HTML基础/">简单的HTML基础</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/12/移动端布局/">移动端布局</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 李可利<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
