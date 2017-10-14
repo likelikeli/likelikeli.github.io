@@ -66,6 +66,111 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-事件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/14/事件/" class="article-date">
+  <time datetime="2017-10-14T01:57:17.000Z" itemprop="datePublished">2017-10-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/14/事件/">事件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>事件分为鼠标事件，键盘事件，表单事件以及移动端事件，今天主要介绍一下鼠标键盘以及表单事件</p>
+<h3 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h3><pre><code>redDiv.onclick=function(){
+    console.log(&quot;onclick点击事件&quot;);
+}
+ onmouseover,onmouseout会在鼠标从父级移入子集元素的时候触发
+onmouseenter，onmouseleave只有在移入移出父级和子集的整体的时候触发
+redDiv.onmouseover=function(){
+    console.log(&quot;onmouseover鼠标移入事件&quot;);
+}
+redDiv.onmouseout=function(){
+    console.log(&quot;onmouseout鼠标移出事件&quot;);
+}
+redDiv.onmouseenter=function(){
+    console.log(&quot;onmouseeneter鼠标移入事件&quot;);
+}
+redDiv.onmouseleave=function(){
+    console.log(&quot;onmouseleave鼠标移出事件&quot;);
+}
+redDiv.onmousedown=function(){
+    console.log(&quot;onmousedown鼠标按下事件&quot;);
+}
+redDiv.onmouseup=function(){
+    console.log(&quot;onmouseup鼠标抬起事件&quot;);
+}
+redDiv.ondblclick=function(){
+    console.log(&quot;ondblclick双击&quot;);
+}
+redDiv.oncontextmenu=function(){
+    console.log(&quot;oncontextmenu鼠标右键&quot;);
+    return false;
+}
+redDiv.onmousemove=function(){
+    console.log(&quot;onmousemove鼠标移动&quot;);
+}
+</code></pre><h3 id="键盘的事件"><a href="#键盘的事件" class="headerlink" title="键盘的事件"></a>键盘的事件</h3><pre><code>只有成为焦点的元素才能触发键盘事件
+document.getElementById(&quot;uname&quot;).onkeydown=function(){
+    console.log(&quot;键盘按下&quot;)
+}
+document.onkeyup=function(){
+     console.log(&quot;键盘抬起&quot;)
+ }
+document.onkeypress=function(){
+     console.log(&quot;press键盘按下&quot;)
+}
+</code></pre><h3 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h3><pre><code>var first=document.getElementById(&quot;first&quot;);
+var uname=document.getElementById(&quot;uname&quot;);
+uname.onblur=function(){
+    console.log(&quot;blur失去了焦点&quot;)
+}
+uname.onchange=function(){
+    console.log(&quot;change内容发生了变化&quot;)
+}
+uname.onfocus=function(){
+    console.log(&quot;获取焦点&quot;)
+}
+输入框内容发生变化的时候，即时
+uname.oninput=function(){
+    console.log(&quot;输入&quot;)
+}
+点击的是提交按钮，form表单触发onsubmit
+first.onsubmit=function(){
+    console.log(&quot;用户提交了表单&quot;);
+    // 一些事件中系统会有默认事件触发，比如，右键的时候会弹出菜单，比如按了提交按钮会跳转网页，这些都是默认事件，默认事件可以被阻止：return false;
+    return false;
+}
+first.onreset=function(){
+    console.log(&quot;用户重置777777了表单&quot;);
+    return false;
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/14/事件/" data-id="cj8qoeo500002iiyrz29jz7uo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-简易版时钟" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/10/14/简易版时钟/" class="article-date">
@@ -235,7 +340,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/简易版时钟/" data-id="cj8qo4z2d0003g8yrwkht2ecp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/简易版时钟/" data-id="cj8qoeo5b0007iiyr1hotb9lp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -313,7 +418,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/碰壁反弹/" data-id="cj8qo4z1q0000g8yrcm5lizxa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/碰壁反弹/" data-id="cj8qoeo520003iiyrptukdk1l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -374,7 +479,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/13/background以及float的设置/" data-id="cj8qo4z2f0004g8yr3see9a59" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/13/background以及float的设置/" data-id="cj8qoeo4q0000iiyr9keytnyw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -436,7 +541,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/13/简单的HTML基础/" data-id="cj8qo4z200002g8yrvhrg2jr1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/13/简单的HTML基础/" data-id="cj8qoeo590006iiyrsl5xqp1p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -479,7 +584,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/12/移动端布局/" data-id="cj8qo4z1w0001g8yr5rvh6qye" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/12/移动端布局/" data-id="cj8qoeo530004iiyrc4axjara" class="article-share-link">Share</a>
       
       
     </footer>
@@ -541,7 +646,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/11/第一天大富翁/" data-id="cj8qo4z2y0006g8yrd4d8pd22" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/11/第一天大富翁/" data-id="cj8qoeo550005iiyr4qen1npg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -586,7 +691,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/11/hello-world/" data-id="cj8qo4z2w0005g8yr0k63au1q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/11/hello-world/" data-id="cj8qoeo4w0001iiyrmv3hk7z6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -626,6 +731,10 @@
       <ul>
         
           <li>
+            <a href="/2017/10/14/事件/">事件</a>
+          </li>
+        
+          <li>
             <a href="/2017/10/14/简易版时钟/">简易版时钟</a>
           </li>
         
@@ -639,10 +748,6 @@
         
           <li>
             <a href="/2017/10/13/简单的HTML基础/">简单的HTML基础</a>
-          </li>
-        
-          <li>
-            <a href="/2017/09/12/移动端布局/">移动端布局</a>
           </li>
         
       </ul>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>事件 | web前端</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="事件分为鼠标事件，键盘事件，表单事件以及移动端事件，今天主要介绍一下鼠标键盘以及表单事件 鼠标事件redDiv.onclick=function(){     console.log(&amp;quot;onclick点击事件&amp;quot;); }  onmouseover,onmouseout会在鼠标从父级移入子集元素的时候触发 onmouseenter，onmouseleave只有在移入移出父级和子集的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="事件">
+<meta property="og:url" content="http://yoursite.com/2017/10/14/事件/index.html">
+<meta property="og:site_name" content="web前端">
+<meta property="og:description" content="事件分为鼠标事件，键盘事件，表单事件以及移动端事件，今天主要介绍一下鼠标键盘以及表单事件 鼠标事件redDiv.onclick=function(){     console.log(&amp;quot;onclick点击事件&amp;quot;); }  onmouseover,onmouseout会在鼠标从父级移入子集元素的时候触发 onmouseenter，onmouseleave只有在移入移出父级和子集的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-10-14T02:01:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="事件">
+<meta name="twitter:description" content="事件分为鼠标事件，键盘事件，表单事件以及移动端事件，今天主要介绍一下鼠标键盘以及表单事件 鼠标事件redDiv.onclick=function(){     console.log(&amp;quot;onclick点击事件&amp;quot;); }  onmouseover,onmouseout会在鼠标从父级移入子集元素的时候触发 onmouseenter，onmouseleave只有在移入移出父级和子集的">
+  
+    <link rel="alternate" href="/atom.xml" title="web前端" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">web前端</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">前端一些简单的基础</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-事件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/14/事件/" class="article-date">
+  <time datetime="2017-10-14T01:57:17.000Z" itemprop="datePublished">2017-10-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      事件
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>事件分为鼠标事件，键盘事件，表单事件以及移动端事件，今天主要介绍一下鼠标键盘以及表单事件</p>
+<h3 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h3><pre><code>redDiv.onclick=function(){
+    console.log(&quot;onclick点击事件&quot;);
+}
+ onmouseover,onmouseout会在鼠标从父级移入子集元素的时候触发
+onmouseenter，onmouseleave只有在移入移出父级和子集的整体的时候触发
+redDiv.onmouseover=function(){
+    console.log(&quot;onmouseover鼠标移入事件&quot;);
+}
+redDiv.onmouseout=function(){
+    console.log(&quot;onmouseout鼠标移出事件&quot;);
+}
+redDiv.onmouseenter=function(){
+    console.log(&quot;onmouseeneter鼠标移入事件&quot;);
+}
+redDiv.onmouseleave=function(){
+    console.log(&quot;onmouseleave鼠标移出事件&quot;);
+}
+redDiv.onmousedown=function(){
+    console.log(&quot;onmousedown鼠标按下事件&quot;);
+}
+redDiv.onmouseup=function(){
+    console.log(&quot;onmouseup鼠标抬起事件&quot;);
+}
+redDiv.ondblclick=function(){
+    console.log(&quot;ondblclick双击&quot;);
+}
+redDiv.oncontextmenu=function(){
+    console.log(&quot;oncontextmenu鼠标右键&quot;);
+    return false;
+}
+redDiv.onmousemove=function(){
+    console.log(&quot;onmousemove鼠标移动&quot;);
+}
+</code></pre><h3 id="键盘的事件"><a href="#键盘的事件" class="headerlink" title="键盘的事件"></a>键盘的事件</h3><pre><code>只有成为焦点的元素才能触发键盘事件
+document.getElementById(&quot;uname&quot;).onkeydown=function(){
+    console.log(&quot;键盘按下&quot;)
+}
+document.onkeyup=function(){
+     console.log(&quot;键盘抬起&quot;)
+ }
+document.onkeypress=function(){
+     console.log(&quot;press键盘按下&quot;)
+}
+</code></pre><h3 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h3><pre><code>var first=document.getElementById(&quot;first&quot;);
+var uname=document.getElementById(&quot;uname&quot;);
+uname.onblur=function(){
+    console.log(&quot;blur失去了焦点&quot;)
+}
+uname.onchange=function(){
+    console.log(&quot;change内容发生了变化&quot;)
+}
+uname.onfocus=function(){
+    console.log(&quot;获取焦点&quot;)
+}
+输入框内容发生变化的时候，即时
+uname.oninput=function(){
+    console.log(&quot;输入&quot;)
+}
+点击的是提交按钮，form表单触发onsubmit
+first.onsubmit=function(){
+    console.log(&quot;用户提交了表单&quot;);
+    // 一些事件中系统会有默认事件触发，比如，右键的时候会弹出菜单，比如按了提交按钮会跳转网页，这些都是默认事件，默认事件可以被阻止：return false;
+    return false;
+}
+first.onreset=function(){
+    console.log(&quot;用户重置777777了表单&quot;);
+    return false;
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/14/事件/" data-id="cj8qoeo500002iiyrz29jz7uo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/14/简易版时钟/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">简易版时钟</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/10/14/事件/">事件</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/14/简易版时钟/">简易版时钟</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/14/碰壁反弹/">碰壁反弹</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/13/background以及float的设置/">background以及float的设置</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/13/简单的HTML基础/">简单的HTML基础</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 李可利<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
