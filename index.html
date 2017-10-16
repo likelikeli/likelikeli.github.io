@@ -66,6 +66,69 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-选择器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/16/选择器/" class="article-date">
+  <time datetime="2017-10-16T02:02:48.000Z" itemprop="datePublished">2017-10-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/16/选择器/">选择器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h3><pre><code>基础选择器-统配选择器
+*作用于所有标签，无论你有没有写，有没有在文档当中出现
+基础选择器-标签选择器（tags）,作用于一类标签，方式是通过标签名称
+基础选择器-群组选择器，用于优化代码，减少文档体积
+基础选择器-类选择器 .类名称
+可以用于各种场景，是我们最常用的选择器，class名可以多个，多个class名用空格隔开。主要用于具有相同样式的元素
+后代选择器  选择器1 选择器2 ...只作用于最后一个选择器，前面的选择器只是过滤条件，帮助我们定位
+div&gt;p 子代选择器 选择的是直接子集，如例所示：选择的是p标签，父级是div的p的标签
+div+p 兄弟毗邻选择器，紧跟在div后面的p标签 ，中间不能有其他标签
+div ~p 跟在div后面的所有p标签，同级
+</code></pre><h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><pre><code>p[title]{}带有title属性的p标签 
+p[title]{}带有title属性的p标签且title属性值为s1的p标签
+p[title*=s]{}title 属性包含s的属性
+p[title$=text]{}title属性必须有text结尾的p标签
+p[title^=text]{}title属性必须有text开头的p标签        
+</code></pre><h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><pre><code>p:nth-child(1)在同级里面，找到第一个p标签，并且是p标签，然后赋值样式
+p:first-child{};第一个p标签
+p:last-child{};最后一个p标签
+p:only-child{};p标签只有一个时候不能有同级元素，独生子
+p:nth-of-type(){}顺序只会看p标签顺序，不管其他标签;
+p:first-of-type{};第一个p标签
+p:last-of-type{};最后一个p标签
+p:only-of-type{};选择属于其父元素唯一的 &lt;p&gt; 元素的每个 &lt;p&gt; 元素
+p:nth-last-of-type(n){};最后第n个  p标签
+input:checked{}被选中的复选框，或者单选框
+p:first-letter对首字母进行设置
+p:first-line对首行进行设置 
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/16/选择器/" data-id="cj8tjl8c90006nmyrxrhwgjcd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-事件对象" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/10/14/事件对象/" class="article-date">
@@ -222,7 +285,7 @@ box.onclick=function(ev){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/事件对象/" data-id="cj8qqa9nq0003vyyrrx362js5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/事件对象/" data-id="cj8tjl8ct0009nmyrsr574lyu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -327,7 +390,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/事件/" data-id="cj8qqa9np0002vyyrpv4doqwg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/事件/" data-id="cj8tjl8c30004nmyrx53fsyqp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -506,7 +569,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/简易版时钟/" data-id="cj8qqa9ny0007vyyr08xtbkq0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/简易版时钟/" data-id="cj8tjl8cb0007nmyro8o4webw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -584,7 +647,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/碰壁反弹/" data-id="cj8qqa9nt0004vyyr09kplvjd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/碰壁反弹/" data-id="cj8tjl8bw0001nmyrsnbfeh8d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -645,7 +708,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/13/background以及float的设置/" data-id="cj8qqa9nf0000vyyrx6z425z2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/13/background以及float的设置/" data-id="cj8tjl8br0000nmyr2n4p5ypa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -707,7 +770,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/13/简单的HTML基础/" data-id="cj8qqa9o40008vyyrjgxd8xmq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/13/简单的HTML基础/" data-id="cj8tjl8c50005nmyrbmjzshoa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -750,7 +813,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/12/移动端布局/" data-id="cj8qqa9nw0005vyyrv7e2xby9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/12/移动端布局/" data-id="cj8tjl8c00002nmyrwts06ulo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -812,7 +875,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/11/第一天大富翁/" data-id="cj8qqa9nx0006vyyr92v2uxtp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/11/第一天大富翁/" data-id="cj8tjl8c20003nmyrum8mg4je" class="article-share-link">Share</a>
       
       
     </footer>
@@ -857,7 +920,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/11/hello-world/" data-id="cj8qqa9nk0001vyyrwvfajcnl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/11/hello-world/" data-id="cj8tjl8cr0008nmyrkie1ubnz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -897,6 +960,10 @@ first.onreset=function(){
       <ul>
         
           <li>
+            <a href="/2017/10/16/选择器/">选择器</a>
+          </li>
+        
+          <li>
             <a href="/2017/10/14/事件对象/">事件对象</a>
           </li>
         
@@ -910,10 +977,6 @@ first.onreset=function(){
         
           <li>
             <a href="/2017/10/14/碰壁反弹/">碰壁反弹</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/13/background以及float的设置/">background以及float的设置</a>
           </li>
         
       </ul>
