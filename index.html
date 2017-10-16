@@ -66,6 +66,69 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-清除浮动的几种方式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/16/清除浮动的几种方式/" class="article-date">
+  <time datetime="2017-10-16T02:18:57.000Z" itemprop="datePublished">2017-10-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/16/清除浮动的几种方式/">清除浮动的几种方式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><ul>
+<li><p>方法一,给父级加高 </p>
+<p>  height: 100px;</p>
+</li>
+<li><p>方法二,在浮动元素后面添加一个新的元素，添加属性clear：both</p>
+  <div style="clear:both"></div></li>
+<li><p>方法三,给其父级添加</p>
+<p>  overflow: hidden; </p>
+</li>
+<li><p>方法四,给其父级添加</p>
+<p>  overflow: auto;</p>
+</li>
+<li>方法五,让其父级一起浮动，但会产生新的浮动问题 不建议使用</li>
+<li><p>方法六,父级div定义为</p>
+<p>  display：table</p>
+</li>
+<li><p>方法七,添加伪元素来清除浮动,常用这来清除浮动</p>
+<pre><code>.div1::after{
+       content:&quot;&quot;;
+       display: block;
+       clear:both;
+   }
+   .div1::after{
+       zoom:1;
+   }
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/16/清除浮动的几种方式/" data-id="cj8tk3o0t0001e6yr8twzq270" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-选择器" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/10/16/选择器/" class="article-date">
@@ -119,7 +182,7 @@ p:first-line对首行进行设置
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/选择器/" data-id="cj8tjl8c90006nmyrxrhwgjcd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/16/选择器/" data-id="cj8tk3o1a0007e6yrkqbb5pva" class="article-share-link">Share</a>
       
       
     </footer>
@@ -285,7 +348,7 @@ box.onclick=function(ev){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/事件对象/" data-id="cj8tjl8ct0009nmyrsr574lyu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/事件对象/" data-id="cj8tk3o0z0003e6yr0uv018og" class="article-share-link">Share</a>
       
       
     </footer>
@@ -390,7 +453,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/事件/" data-id="cj8tjl8c30004nmyrx53fsyqp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/事件/" data-id="cj8tk3o100004e6yrq0oluj4m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -569,7 +632,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/简易版时钟/" data-id="cj8tjl8cb0007nmyro8o4webw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/简易版时钟/" data-id="cj8tk3o1g0009e6yrcrucfirc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -647,7 +710,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/碰壁反弹/" data-id="cj8tjl8bw0001nmyrsnbfeh8d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/碰壁反弹/" data-id="cj8tk3o1h000ae6yrlal13w8u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -708,7 +771,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/13/background以及float的设置/" data-id="cj8tjl8br0000nmyr2n4p5ypa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/13/background以及float的设置/" data-id="cj8tk3o0o0000e6yr4y693ubr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -770,7 +833,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/13/简单的HTML基础/" data-id="cj8tjl8c50005nmyrbmjzshoa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/13/简单的HTML基础/" data-id="cj8tk3o1f0008e6yraed6cgxh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -813,7 +876,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/12/移动端布局/" data-id="cj8tjl8c00002nmyrwts06ulo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/12/移动端布局/" data-id="cj8tk3o170006e6yr6xifn8ig" class="article-share-link">Share</a>
       
       
     </footer>
@@ -875,52 +938,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/11/第一天大富翁/" data-id="cj8tjl8c20003nmyrum8mg4je" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/11/hello-world/" class="article-date">
-  <time datetime="2017-09-11T08:57:44.000Z" itemprop="datePublished">2017-09-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/11/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/11/hello-world/" data-id="cj8tjl8cr0008nmyrkie1ubnz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/11/第一天大富翁/" data-id="cj8tk3o140005e6yryi97arjs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -931,6 +949,10 @@ first.onreset=function(){
 
   
 
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
@@ -960,6 +982,10 @@ first.onreset=function(){
       <ul>
         
           <li>
+            <a href="/2017/10/16/清除浮动的几种方式/">清除浮动的几种方式</a>
+          </li>
+        
+          <li>
             <a href="/2017/10/16/选择器/">选择器</a>
           </li>
         
@@ -973,10 +999,6 @@ first.onreset=function(){
         
           <li>
             <a href="/2017/10/14/简易版时钟/">简易版时钟</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/14/碰壁反弹/">碰壁反弹</a>
           </li>
         
       </ul>
