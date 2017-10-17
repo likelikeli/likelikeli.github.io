@@ -66,6 +66,154 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-window事件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/17/window事件/" class="article-date">
+  <time datetime="2017-10-17T11:50:27.000Z" itemprop="datePublished">2017-10-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/17/window事件/">window事件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="window事件"><a href="#window事件" class="headerlink" title="window事件"></a>window事件</h2><p>window主要就两个事件分别为window.onload 和 window.resize </p>
+<h3 id="window-onload"><a href="#window-onload" class="headerlink" title="window.onload"></a>window.onload</h3><p>window.onload 是在窗口加载完毕之后才会执行<br>不能在window.onload内部使用document.write<br>窗口加载完毕之后会关闭文档流，如果使用document.write会开启新的文档流覆盖原有的文档流</p>
+<pre><code>window.onload=function(){
+      document.getElementById(&quot;redDiv&quot;);
+              console.log(redDiv);
+              // document.write(123);
+              判断一个变量是不是NaN 要用isNaN
+              var str=&quot;123&quot;;
+              var num=Number(str)
+              if(isNaN(num)){
+              console.log(&quot;num是NaN&quot;)
+              num=0;
+          }else{
+              console.log(&quot;num不是NaN&quot;)
+              redDiv.innerHTML=num+3;
+          }
+  }
+</code></pre><h3 id="window-resize"><a href="#window-resize" class="headerlink" title="window.resize"></a>window.resize</h3><p>resize 窗口尺寸发生变化之后触发的事件</p>
+<pre><code>window.onresize=function(){
+    console.log(window.innerHeight,window.innerWidth);
+    redDiv.style.width=window.innerWidth/2+&apos;px&apos;
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/17/window事件/" data-id="cj8vklpjw0001pyyrvw9t2uru" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-移动端事件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/17/移动端事件/" class="article-date">
+  <time datetime="2017-10-17T11:49:25.000Z" itemprop="datePublished">2017-10-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/17/移动端事件/">移动端事件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="移动端事件"><a href="#移动端事件" class="headerlink" title="移动端事件"></a>移动端事件</h2><h3 id="触屏事件"><a href="#触屏事件" class="headerlink" title="触屏事件"></a>触屏事件</h3><p>移动端事件要比PC端要简单的多，<br>移动端主要就有ontouchstart ontouchend ontouchmove ontouchcancel 几种下面来一一介绍</p>
+<ul>
+<li><p>ontouchstart<br>相当于PC端的onmousedown</p>
+<p>  box.ontouchstart=function(){</p>
+<pre><code>box.style.left=&quot;200px&quot;;
+</code></pre><p>  }<br>用法和onmousedown 用法相同</p>
+</li>
+<li><p>ontouchend<br>相当于PC端的onmouseup</p>
+<p>  box.ontouchend=function(){</p>
+<pre><code>box.style.left=&quot;100px&quot;;
+</code></pre><p>  }<br>用法和onmouseup相似</p>
+</li>
+<li><p>ontouchmove<br>相当于PC端的onmousemove</p>
+<p>  redDiv.ontouchstart=function(){</p>
+<pre><code>document.ontouchmove=function(){
+    var evObj=window.event || ev;
+    redDiv.style.left=evObj.changedTouches[0].pageX+&apos;px&apos;;
+    redDiv.style.top=evObj.changedTouches[0].pageY+&apos;px&apos;;
+    &lt;!-- touchmove的时候，可以阻止默认事件，让网页不会跟着滑动。 --&gt;
+    return false;
+}            
+</code></pre><p>  }<br>  redDiv.ontouchend  = function(){</p>
+<pre><code>document.ontouchmove = null;
+</code></pre><p>  }<br>上面那个例子是让redDiv跟随手指滑动而运动</p>
+</li>
+<li>ontouchcancel<br>取消触摸的时候触发。比如来电话、信息等，系统中止触摸事件的时候会触发，每个手机触发方式不一样。</li>
+</ul>
+<p>###每个触屏事件都包含事件对象。事件对象常用的有三个属性</p>
+<ul>
+<li>touches        屏幕上所有的手指列表</li>
+<li>targetTouches   元素内的所有手指列表</li>
+<li>changedTouches  改变了状态的手指列表<h3 id="两个设备事件-加速器和陀螺仪"><a href="#两个设备事件-加速器和陀螺仪" class="headerlink" title="两个设备事件 加速器和陀螺仪"></a>两个设备事件 加速器和陀螺仪</h3></li>
+<li>if (window.DeviceMotionEvent)判断手机是否支持</li>
+<li><p>动态的重力加速度<br>accelerationIncludingGravity包括了重力加速度的X,y ,z 的三个方向<br>下面一个例子获取当前的重力加速度，X轴Y轴Z轴</p>
+<pre><code>window.ondevicemotion=function(){
+       var evObj=window.event ||ev;
+       var x=evObj.accelerationIncludingGravity.x;
+       var y=evObj.accelerationIncludingGravity.y;
+        var z=evObj.accelerationIncludingGravity.z;
+       blueDiv.innerHTML=&quot;x:&quot;+x+&quot;&lt;/br&gt;&quot;+&quot;y&quot;+y+&quot;&lt;/br&gt;&quot;+&quot;z:&quot;+z;
+    }
+}else{
+    redDiv.innerHTML=&quot;换个手机吧&quot;
+}
+</code></pre><p>下面是螺旋仪的例子</p>
+<p>  window.ondeviceorientation=function(ev){</p>
+<pre><code>    var evObj=window.event ||ev;
+    var alpha=parseInt(evObj.alpha);
+    var beta=parseInt(evObj.beta);
+    var gamma=parseInt(evObj.gamma);
+    blueDiv.innerHTML=&quot;alpha:&quot;+alpha+&quot;&lt;/br&gt;&quot;+&quot;beta:&quot;+beta+&quot;&lt;/br&gt;&quot;+&quot;gamma:&quot;+gamma;
+}
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/17/移动端事件/" data-id="cj8vklpk60005pyyr84jwdi2p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-CSS样式-文字设置" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/10/16/CSS样式-文字设置/" class="article-date">
@@ -109,7 +257,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/CSS样式-文字设置/" data-id="cj8uvmoxg0003dayrr2az16ha" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/16/CSS样式-文字设置/" data-id="cj8vklpjq0000pyyrds29p4qs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -174,7 +322,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/清除浮动的几种方式/" data-id="cj8uvmoxh0004dayrdzun5r97" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/16/清除浮动的几种方式/" data-id="cj8vklpk20003pyyrtaeqotiu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -237,7 +385,7 @@ p:first-line对首行进行设置
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/选择器/" data-id="cj8uvmoxr0007dayry0nzs176" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/16/选择器/" data-id="cj8vklpko000cpyyr4lzwjqrp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -403,7 +551,7 @@ box.onclick=function(ev){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/事件对象/" data-id="cj8uvmoxl0005dayrtx8yi6pr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/事件对象/" data-id="cj8vklpk30004pyyrsir75t1e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -508,7 +656,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/事件/" data-id="cj8uvmoxa0001dayra8afssz3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/事件/" data-id="cj8vklpk90006pyyrcw03rv2y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -687,7 +835,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/简易版时钟/" data-id="cj8uvmoxz0009dayrn0rr7fhk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/简易版时钟/" data-id="cj8vklpkl000apyyr38e80uv7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -765,7 +913,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/碰壁反弹/" data-id="cj8uvmoy1000adayromjda20v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/碰壁反弹/" data-id="cj8vklpkm000bpyyrzfzfae1z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -826,112 +974,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/13/background以及float的设置/" data-id="cj8uvmowq0000dayrgv6pth52" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-简单的HTML基础" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/13/简单的HTML基础/" class="article-date">
-  <time datetime="2017-10-13T14:04:56.000Z" itemprop="datePublished">2017-10-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/13/简单的HTML基础/">简单的HTML基础</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="标签的分类：block-inline-inline-block；"><a href="#标签的分类：block-inline-inline-block；" class="headerlink" title="标签的分类：block inline inline-block；"></a>标签的分类：block inline inline-block；</h3><ul>
-<li>block ：独占一行 ；可以设置尺寸；没有明确宽度的时候，宽度由父级决定 ；没有明确高度的时候，高度由内容决定</li>
-<li>inline：不会独占一行，可以与其他行级元素并排 ；.不支持尺寸设置</li>
-<li>inline-block：不会独占一行，可以与其他行级元素并排 ；.支持尺寸设置<h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3></li>
-<li>标准盒模型：内容尺寸：width*height<pre><code>盒子尺寸：（width+border+padding）*（height+border+padding）
-区域尺寸：（width+border+margin+padding）*（height+border+padding+margin）
-</code></pre></li>
-<li>怪异盒模型：内容尺寸：（width-border-padding）*（height-border-padding）<pre><code>盒子尺寸：width*height
-区域尺寸：（width+margin）*（height+margin）
-</code></pre><h3 id="样式表的分类及优缺点"><a href="#样式表的分类及优缺点" class="headerlink" title="样式表的分类及优缺点"></a>样式表的分类及优缺点</h3></li>
-<li>行间样式表优缺点<pre><code>优点：不会产生额外的请求
-缺点：容易产生代码冗余，导致文档体积变大
-     不利于维护，不符合结构和样式分离的规范
-</code></pre></li>
-<li>内部样式优缺点<pre><code>缺点：代码复用不方便 
-优点：初步实现结构和样式的分离
-     不会产生额外的请求
-</code></pre></li>
-<li>外部样式表优缺点<pre><code>优点：
-    便于后期维护
-    可以重复使用
-    完全实现结构和样式的分离
-缺点：
-    会产生额外的请求
-</code></pre><h3 id="基础选择器：统配选择器，标签选择器，类选择器，群组选择器，后代选择器"><a href="#基础选择器：统配选择器，标签选择器，类选择器，群组选择器，后代选择器" class="headerlink" title="基础选择器：统配选择器，标签选择器，类选择器，群组选择器，后代选择器"></a>基础选择器：统配选择器，标签选择器，类选择器，群组选择器，后代选择器</h3><h3 id="选择器的优先级"><a href="#选择器的优先级" class="headerlink" title="选择器的优先级"></a>选择器的优先级</h3>*&lt;tags&lt;class&lt;id&lt;style&lt;important</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/13/简单的HTML基础/" data-id="cj8uvmoxw0008dayr4vj0u08b" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-移动端布局" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/12/移动端布局/" class="article-date">
-  <time datetime="2017-09-12T12:25:33.000Z" itemprop="datePublished">2017-09-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/12/移动端布局/">移动端布局</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="viewPort"><a href="#viewPort" class="headerlink" title="viewPort"></a>viewPort</h2><ul>
-<li>width 可以设置HTML页面的宽度，在移动端一般设置为device-width。</li>
-<li>initial-scale：初始缩放比例，第一次进入页面上的时候，整个页面的缩放比例</li>
-<li>minimum-scale：2.0最小的缩放比例。最小的缩放比例是指页面最小是原来的两倍</li>
-<li>user-scalable=no 设置是否允许用户缩放，no不允许缩放，Yes允许缩放。</li>
-<li>maximum-scale：3.0最大的缩放比例。最大的缩放比例是指页面最大是原来的三倍<h2 id="flexible"><a href="#flexible" class="headerlink" title="flexible"></a>flexible</h2>1.引入类库 flexible 库的使用方法非常的简单，只需要在Web页面的 <head></head> 中添加对应的 <script src="build/flexible_css.debug.js"></script><br><script src="build/flexible.debug.js"></script><br>2.把视觉稿中的 px 转换成 rem<br>例如：我们把750px的稿子分成10份，也就是整个宽度为10rem ，<html>对应的font-size为75px 。</html></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/12/移动端布局/" data-id="cj8uvmoxp0006dayrptw9bgks" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/13/background以及float的设置/" data-id="cj8vklpjz0002pyyrvrjl5g03" class="article-share-link">Share</a>
       
       
     </footer>
@@ -975,6 +1018,14 @@ first.onreset=function(){
       <ul>
         
           <li>
+            <a href="/2017/10/17/window事件/">window事件</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/17/移动端事件/">移动端事件</a>
+          </li>
+        
+          <li>
             <a href="/2017/10/16/CSS样式-文字设置/">CSS样式-文字设置</a>
           </li>
         
@@ -984,14 +1035,6 @@ first.onreset=function(){
         
           <li>
             <a href="/2017/10/16/选择器/">选择器</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/14/事件对象/">事件对象</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/14/事件/">事件的分类</a>
           </li>
         
       </ul>

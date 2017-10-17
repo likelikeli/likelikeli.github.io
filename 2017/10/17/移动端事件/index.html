@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>移动端事件 | web前端</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="移动端事件触屏事件移动端事件要比PC端要简单的多，移动端主要就有ontouchstart ontouchend ontouchmove ontouchcancel 几种下面来一一介绍  ontouchstart相当于PC端的onmousedown   box.ontouchstart=function(){ box.style.left=&amp;quot;200px&amp;quot;;   }用法和onmou">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端事件">
+<meta property="og:url" content="http://yoursite.com/2017/10/17/移动端事件/index.html">
+<meta property="og:site_name" content="web前端">
+<meta property="og:description" content="移动端事件触屏事件移动端事件要比PC端要简单的多，移动端主要就有ontouchstart ontouchend ontouchmove ontouchcancel 几种下面来一一介绍  ontouchstart相当于PC端的onmousedown   box.ontouchstart=function(){ box.style.left=&amp;quot;200px&amp;quot;;   }用法和onmou">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-10-17T12:13:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动端事件">
+<meta name="twitter:description" content="移动端事件触屏事件移动端事件要比PC端要简单的多，移动端主要就有ontouchstart ontouchend ontouchmove ontouchcancel 几种下面来一一介绍  ontouchstart相当于PC端的onmousedown   box.ontouchstart=function(){ box.style.left=&amp;quot;200px&amp;quot;;   }用法和onmou">
+  
+    <link rel="alternate" href="/atom.xml" title="web前端" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">web前端</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">前端一些简单的基础</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-移动端事件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/17/移动端事件/" class="article-date">
+  <time datetime="2017-10-17T11:49:25.000Z" itemprop="datePublished">2017-10-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      移动端事件
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="移动端事件"><a href="#移动端事件" class="headerlink" title="移动端事件"></a>移动端事件</h2><h3 id="触屏事件"><a href="#触屏事件" class="headerlink" title="触屏事件"></a>触屏事件</h3><p>移动端事件要比PC端要简单的多，<br>移动端主要就有ontouchstart ontouchend ontouchmove ontouchcancel 几种下面来一一介绍</p>
+<ul>
+<li><p>ontouchstart<br>相当于PC端的onmousedown</p>
+<p>  box.ontouchstart=function(){</p>
+<pre><code>box.style.left=&quot;200px&quot;;
+</code></pre><p>  }<br>用法和onmousedown 用法相同</p>
+</li>
+<li><p>ontouchend<br>相当于PC端的onmouseup</p>
+<p>  box.ontouchend=function(){</p>
+<pre><code>box.style.left=&quot;100px&quot;;
+</code></pre><p>  }<br>用法和onmouseup相似</p>
+</li>
+<li><p>ontouchmove<br>相当于PC端的onmousemove</p>
+<p>  redDiv.ontouchstart=function(){</p>
+<pre><code>document.ontouchmove=function(){
+    var evObj=window.event || ev;
+    redDiv.style.left=evObj.changedTouches[0].pageX+&apos;px&apos;;
+    redDiv.style.top=evObj.changedTouches[0].pageY+&apos;px&apos;;
+    &lt;!-- touchmove的时候，可以阻止默认事件，让网页不会跟着滑动。 --&gt;
+    return false;
+}            
+</code></pre><p>  }<br>  redDiv.ontouchend  = function(){</p>
+<pre><code>document.ontouchmove = null;
+</code></pre><p>  }<br>上面那个例子是让redDiv跟随手指滑动而运动</p>
+</li>
+<li>ontouchcancel<br>取消触摸的时候触发。比如来电话、信息等，系统中止触摸事件的时候会触发，每个手机触发方式不一样。</li>
+</ul>
+<p>###每个触屏事件都包含事件对象。事件对象常用的有三个属性</p>
+<ul>
+<li>touches        屏幕上所有的手指列表</li>
+<li>targetTouches   元素内的所有手指列表</li>
+<li>changedTouches  改变了状态的手指列表<h3 id="两个设备事件-加速器和陀螺仪"><a href="#两个设备事件-加速器和陀螺仪" class="headerlink" title="两个设备事件 加速器和陀螺仪"></a>两个设备事件 加速器和陀螺仪</h3></li>
+<li>if (window.DeviceMotionEvent)判断手机是否支持</li>
+<li><p>动态的重力加速度<br>accelerationIncludingGravity包括了重力加速度的X,y ,z 的三个方向<br>下面一个例子获取当前的重力加速度，X轴Y轴Z轴</p>
+<pre><code>window.ondevicemotion=function(){
+       var evObj=window.event ||ev;
+       var x=evObj.accelerationIncludingGravity.x;
+       var y=evObj.accelerationIncludingGravity.y;
+        var z=evObj.accelerationIncludingGravity.z;
+       blueDiv.innerHTML=&quot;x:&quot;+x+&quot;&lt;/br&gt;&quot;+&quot;y&quot;+y+&quot;&lt;/br&gt;&quot;+&quot;z:&quot;+z;
+    }
+}else{
+    redDiv.innerHTML=&quot;换个手机吧&quot;
+}
+</code></pre><p>下面是螺旋仪的例子</p>
+<p>  window.ondeviceorientation=function(ev){</p>
+<pre><code>    var evObj=window.event ||ev;
+    var alpha=parseInt(evObj.alpha);
+    var beta=parseInt(evObj.beta);
+    var gamma=parseInt(evObj.gamma);
+    blueDiv.innerHTML=&quot;alpha:&quot;+alpha+&quot;&lt;/br&gt;&quot;+&quot;beta:&quot;+beta+&quot;&lt;/br&gt;&quot;+&quot;gamma:&quot;+gamma;
+}
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/17/移动端事件/" data-id="cj8vklpk60005pyyr84jwdi2p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/10/17/window事件/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          window事件
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/10/16/CSS样式-文字设置/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CSS样式-文字设置</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/10/17/window事件/">window事件</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/17/移动端事件/">移动端事件</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/16/CSS样式-文字设置/">CSS样式-文字设置</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/16/清除浮动的几种方式/">清除浮动的几种方式</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/16/选择器/">选择器</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 李可利<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

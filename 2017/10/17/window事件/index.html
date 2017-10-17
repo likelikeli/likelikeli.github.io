@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>移动端布局 | web前端</title>
+  <title>window事件 | web前端</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="viewPort width 可以设置HTML页面的宽度，在移动端一般设置为device-width。 initial-scale：初始缩放比例，第一次进入页面上的时候，整个页面的缩放比例 minimum-scale：2.0最小的缩放比例。最小的缩放比例是指页面最小是原来的两倍 user-scalable=no 设置是否允许用户缩放，no不允许缩放，Yes允许缩放。 maximum-scale：3">
+  <meta name="description" content="window事件window主要就两个事件分别为window.onload 和 window.resize  window.onloadwindow.onload 是在窗口加载完毕之后才会执行不能在window.onload内部使用document.write窗口加载完毕之后会关闭文档流，如果使用document.write会开启新的文档流覆盖原有的文档流 window.onload=functi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="移动端布局">
-<meta property="og:url" content="http://yoursite.com/2017/09/12/移动端布局/index.html">
+<meta property="og:title" content="window事件">
+<meta property="og:url" content="http://yoursite.com/2017/10/17/window事件/index.html">
 <meta property="og:site_name" content="web前端">
-<meta property="og:description" content="viewPort width 可以设置HTML页面的宽度，在移动端一般设置为device-width。 initial-scale：初始缩放比例，第一次进入页面上的时候，整个页面的缩放比例 minimum-scale：2.0最小的缩放比例。最小的缩放比例是指页面最小是原来的两倍 user-scalable=no 设置是否允许用户缩放，no不允许缩放，Yes允许缩放。 maximum-scale：3">
+<meta property="og:description" content="window事件window主要就两个事件分别为window.onload 和 window.resize  window.onloadwindow.onload 是在窗口加载完毕之后才会执行不能在window.onload内部使用document.write窗口加载完毕之后会关闭文档流，如果使用document.write会开启新的文档流覆盖原有的文档流 window.onload=functi">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-12T12:51:46.000Z">
+<meta property="og:updated_time" content="2017-10-17T11:52:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="移动端布局">
-<meta name="twitter:description" content="viewPort width 可以设置HTML页面的宽度，在移动端一般设置为device-width。 initial-scale：初始缩放比例，第一次进入页面上的时候，整个页面的缩放比例 minimum-scale：2.0最小的缩放比例。最小的缩放比例是指页面最小是原来的两倍 user-scalable=no 设置是否允许用户缩放，no不允许缩放，Yes允许缩放。 maximum-scale：3">
+<meta name="twitter:title" content="window事件">
+<meta name="twitter:description" content="window事件window主要就两个事件分别为window.onload 和 window.resize  window.onloadwindow.onload 是在窗口加载完毕之后才会执行不能在window.onload内部使用document.write窗口加载完毕之后会关闭文档流，如果使用document.write会开启新的文档流覆盖原有的文档流 window.onload=functi">
   
     <link rel="alternate" href="/atom.xml" title="web前端" type="application/atom+xml">
   
@@ -68,10 +68,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-移动端布局" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-window事件" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/09/12/移动端布局/" class="article-date">
-  <time datetime="2017-09-12T12:25:33.000Z" itemprop="datePublished">2017-09-12</time>
+    <a href="/2017/10/17/window事件/" class="article-date">
+  <time datetime="2017-10-17T11:50:27.000Z" itemprop="datePublished">2017-10-17</time>
 </a>
     
   </div>
@@ -82,7 +82,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      移动端布局
+      window事件
     </h1>
   
 
@@ -90,18 +90,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="viewPort"><a href="#viewPort" class="headerlink" title="viewPort"></a>viewPort</h2><ul>
-<li>width 可以设置HTML页面的宽度，在移动端一般设置为device-width。</li>
-<li>initial-scale：初始缩放比例，第一次进入页面上的时候，整个页面的缩放比例</li>
-<li>minimum-scale：2.0最小的缩放比例。最小的缩放比例是指页面最小是原来的两倍</li>
-<li>user-scalable=no 设置是否允许用户缩放，no不允许缩放，Yes允许缩放。</li>
-<li>maximum-scale：3.0最大的缩放比例。最大的缩放比例是指页面最大是原来的三倍<h2 id="flexible"><a href="#flexible" class="headerlink" title="flexible"></a>flexible</h2>1.引入类库 flexible 库的使用方法非常的简单，只需要在Web页面的 <head></head> 中添加对应的 <script src="build/flexible_css.debug.js"></script><br><script src="build/flexible.debug.js"></script><br>2.把视觉稿中的 px 转换成 rem<br>例如：我们把750px的稿子分成10份，也就是整个宽度为10rem ，<html>对应的font-size为75px 。</html></li>
-</ul>
-
+        <h2 id="window事件"><a href="#window事件" class="headerlink" title="window事件"></a>window事件</h2><p>window主要就两个事件分别为window.onload 和 window.resize </p>
+<h3 id="window-onload"><a href="#window-onload" class="headerlink" title="window.onload"></a>window.onload</h3><p>window.onload 是在窗口加载完毕之后才会执行<br>不能在window.onload内部使用document.write<br>窗口加载完毕之后会关闭文档流，如果使用document.write会开启新的文档流覆盖原有的文档流</p>
+<pre><code>window.onload=function(){
+      document.getElementById(&quot;redDiv&quot;);
+              console.log(redDiv);
+              // document.write(123);
+              判断一个变量是不是NaN 要用isNaN
+              var str=&quot;123&quot;;
+              var num=Number(str)
+              if(isNaN(num)){
+              console.log(&quot;num是NaN&quot;)
+              num=0;
+          }else{
+              console.log(&quot;num不是NaN&quot;)
+              redDiv.innerHTML=num+3;
+          }
+  }
+</code></pre><h3 id="window-resize"><a href="#window-resize" class="headerlink" title="window.resize"></a>window.resize</h3><p>resize 窗口尺寸发生变化之后触发的事件</p>
+<pre><code>window.onresize=function(){
+    console.log(window.innerHeight,window.innerWidth);
+    redDiv.style.width=window.innerWidth/2+&apos;px&apos;
+}
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/12/移动端布局/" data-id="cj8vklpkg0008pyyrdxcqos3w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/17/window事件/" data-id="cj8vklpjw0001pyyrvw9t2uru" class="article-share-link">Share</a>
       
       
     </footer>
@@ -110,19 +125,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/10/13/简单的HTML基础/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          简单的HTML基础
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/09/11/第一天大富翁/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/10/17/移动端事件/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">flex</div>
+      <div class="article-nav-title">移动端事件</div>
     </a>
   
 </nav>

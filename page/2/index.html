@@ -66,6 +66,111 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-简单的HTML基础" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/13/简单的HTML基础/" class="article-date">
+  <time datetime="2017-10-13T14:04:56.000Z" itemprop="datePublished">2017-10-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/13/简单的HTML基础/">简单的HTML基础</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="标签的分类：block-inline-inline-block；"><a href="#标签的分类：block-inline-inline-block；" class="headerlink" title="标签的分类：block inline inline-block；"></a>标签的分类：block inline inline-block；</h3><ul>
+<li>block ：独占一行 ；可以设置尺寸；没有明确宽度的时候，宽度由父级决定 ；没有明确高度的时候，高度由内容决定</li>
+<li>inline：不会独占一行，可以与其他行级元素并排 ；.不支持尺寸设置</li>
+<li>inline-block：不会独占一行，可以与其他行级元素并排 ；.支持尺寸设置<h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3></li>
+<li>标准盒模型：内容尺寸：width*height<pre><code>盒子尺寸：（width+border+padding）*（height+border+padding）
+区域尺寸：（width+border+margin+padding）*（height+border+padding+margin）
+</code></pre></li>
+<li>怪异盒模型：内容尺寸：（width-border-padding）*（height-border-padding）<pre><code>盒子尺寸：width*height
+区域尺寸：（width+margin）*（height+margin）
+</code></pre><h3 id="样式表的分类及优缺点"><a href="#样式表的分类及优缺点" class="headerlink" title="样式表的分类及优缺点"></a>样式表的分类及优缺点</h3></li>
+<li>行间样式表优缺点<pre><code>优点：不会产生额外的请求
+缺点：容易产生代码冗余，导致文档体积变大
+     不利于维护，不符合结构和样式分离的规范
+</code></pre></li>
+<li>内部样式优缺点<pre><code>缺点：代码复用不方便 
+优点：初步实现结构和样式的分离
+     不会产生额外的请求
+</code></pre></li>
+<li>外部样式表优缺点<pre><code>优点：
+    便于后期维护
+    可以重复使用
+    完全实现结构和样式的分离
+缺点：
+    会产生额外的请求
+</code></pre><h3 id="基础选择器：统配选择器，标签选择器，类选择器，群组选择器，后代选择器"><a href="#基础选择器：统配选择器，标签选择器，类选择器，群组选择器，后代选择器" class="headerlink" title="基础选择器：统配选择器，标签选择器，类选择器，群组选择器，后代选择器"></a>基础选择器：统配选择器，标签选择器，类选择器，群组选择器，后代选择器</h3><h3 id="选择器的优先级"><a href="#选择器的优先级" class="headerlink" title="选择器的优先级"></a>选择器的优先级</h3>*&lt;tags&lt;class&lt;id&lt;style&lt;important</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/13/简单的HTML基础/" data-id="cj8vklpkj0009pyyr70l5ewie" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-移动端布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/12/移动端布局/" class="article-date">
+  <time datetime="2017-09-12T12:25:33.000Z" itemprop="datePublished">2017-09-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/12/移动端布局/">移动端布局</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="viewPort"><a href="#viewPort" class="headerlink" title="viewPort"></a>viewPort</h2><ul>
+<li>width 可以设置HTML页面的宽度，在移动端一般设置为device-width。</li>
+<li>initial-scale：初始缩放比例，第一次进入页面上的时候，整个页面的缩放比例</li>
+<li>minimum-scale：2.0最小的缩放比例。最小的缩放比例是指页面最小是原来的两倍</li>
+<li>user-scalable=no 设置是否允许用户缩放，no不允许缩放，Yes允许缩放。</li>
+<li>maximum-scale：3.0最大的缩放比例。最大的缩放比例是指页面最大是原来的三倍<h2 id="flexible"><a href="#flexible" class="headerlink" title="flexible"></a>flexible</h2>1.引入类库 flexible 库的使用方法非常的简单，只需要在Web页面的 <head></head> 中添加对应的 <script src="build/flexible_css.debug.js"></script><br><script src="build/flexible.debug.js"></script><br>2.把视觉稿中的 px 转换成 rem<br>例如：我们把750px的稿子分成10份，也就是整个宽度为10rem ，<html>对应的font-size为75px 。</html></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/09/12/移动端布局/" data-id="cj8vklpkg0008pyyrdxcqos3w" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-第一天大富翁" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/09/11/第一天大富翁/" class="article-date">
@@ -118,7 +223,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/11/第一天大富翁/" data-id="cj8uvmoy3000bdayrdo4jndje" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/11/第一天大富翁/" data-id="cj8vklpkb0007pyyrl5myj1d2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -163,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/11/hello-world/" data-id="cj8uvmoxd0002dayrvswzsd4m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/11/hello-world/" data-id="cj8vklpkr000dpyyr03r9u97m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -207,6 +312,14 @@
       <ul>
         
           <li>
+            <a href="/2017/10/17/window事件/">window事件</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/17/移动端事件/">移动端事件</a>
+          </li>
+        
+          <li>
             <a href="/2017/10/16/CSS样式-文字设置/">CSS样式-文字设置</a>
           </li>
         
@@ -216,14 +329,6 @@
         
           <li>
             <a href="/2017/10/16/选择器/">选择器</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/14/事件对象/">事件对象</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/14/事件/">事件的分类</a>
           </li>
         
       </ul>
