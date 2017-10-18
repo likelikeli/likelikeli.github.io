@@ -66,6 +66,94 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-BOM" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/18/BOM/" class="article-date">
+  <time datetime="2017-10-18T11:27:16.000Z" itemprop="datePublished">2017-10-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/18/BOM/">BOM</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h2><p>BOM主要就五个对象，下面一一介绍</p>
+<h4 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h4><p>1.window.open()四个参数</p>
+<ul>
+<li>URL到打开的窗口的地址</li>
+<li>target 和a 标签的一样</li>
+<li>窗口特征 ：可以改变打开的新窗口的特征</li>
+<li><p>是否使用新地址特换当前的历史记录，true是替换，falsely是不替换成新的记录<br>例如</p>
+<p>  document.onclick=function(){</p>
+<pre><code>var newWindow=window.open(&quot;http://www.baidu.com&quot;,&quot;_blank&quot;, &quot;width=500,height=300,top=200,left=200&quot;);
+</code></pre><p>  }<br>2.moveBy()两个参数，单位是像素，在原有的基础上偏移多少</p>
+</li>
+<li>第一个值为X轴偏移量</li>
+<li>第二个值Y轴偏移量<br>例如：newWindow.moveBy(200,0);<br>3.moveTo()两个参数，单位是像素，移动到什么地方</li>
+<li>第一个值距离窗口X轴位置</li>
+<li><p>第二个值距离窗口Y轴位置<br>4.window.close()窗口关闭</p>
+<p>  setTimeout(function(){</p>
+<pre><code>// 关闭窗口
+newWindow.close();
+</code></pre><p>  },4000)<br>confirm 待取消按钮的弹框</p>
+<p>  if(confirm(“这是一个比较牛逼的弹框”)){</p>
+<pre><code>console.log(&quot;点了确定&quot;)
+</code></pre><p>  }else{</p>
+<pre><code>console.log(&quot;点了取消&quot;)
+</code></pre><p>  }<br>prompt 带输入框的弹框</p>
+<p>  var name=prompt(“Please enter your name”,””)<br>  console.log(name);<br>例如：newWindow.moveTo(100,100);</p>
+<h4 id="screen对象"><a href="#screen对象" class="headerlink" title="screen对象"></a>screen对象</h4></li>
+<li>availHeight<br>属性声明了显示浏览器的屏幕的可用高度，以像素计。在 Windows 这样的操作系统中，这个可用高度不包括分配给半永久特性（如屏幕底部的任务栏）的垂直空间。</li>
+<li>availWidth<br>属性声明了显示浏览器的屏幕的可用宽度，以像素计。在 Windows 这样的操作系统中，这个可用高度不包括分配给半永久特性（如屏幕底部的任务栏）的垂直空间。</li>
+<li>height<br>属性声明了显示浏览器的屏幕的高度，以像素计。</li>
+<li>width<br>属性声明了显示浏览器的屏幕的宽度，以像素计。</li>
+<li>colorDepth<br>属性返回目标设备或缓冲器上的调色板的比特深度。</li>
+<li>pixelDepth<br>属性返回显示屏幕的颜色分辨率（比特每像素）<h4 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h4></li>
+<li>appCodeName<br>在所有以 Netscape 代码为基础的浏览器中，它的值是 “Mozilla”。为了兼容起见，在 Microsoft 的浏览器中，它的值也是 “Mozilla”。</li>
+<li>appName<br>属性可返回浏览器的名称。appName 属性是一个只读到字符串，声明了浏览器的名称。在基于 Netscape 的浏览器中，这个属性的值是 “Netscape”。在 IE 中，这个属性的值是 “Microsoft Internet Explorer”。其他浏览器可以正确地表示自己或者伪装成其他的浏览器以达到兼容性。</li>
+<li>appVersion<br>属性可返回浏览器的平台和版本信息。该属性是一个只读的字符串。该字符串的第一部分是版本号。把该字符串传递给 parseInt() 只能获取主版本号。该属性的其余部分提供了有关浏览器版本的其他细节，包括运行它的操作系统的信息。</li>
+<li>cookieEnabled<br>属性可返回一个布尔值，如果浏览器启用了 cookie，该属性值为 true。如果禁用了 cookie，则值为 false。</li>
+<li>onLine<br>属性是一个只读的布尔值，声明了系统是否处于脱机模式</li>
+<li>platform<br>属性是一个只读的字符串，声明了运行浏览器的操作系统和（或）硬件平台。</li>
+<li>serAgent<br>属性是一个只读的字符串，声明了浏览器用于 HTTP 请求的用户代理头的值。 一般来讲，它是在 navigator.appCodeName 的值之后加上斜线和 navigator.appVersion 的值构成的。<h4 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h4></li>
+<li>hash<br>属性是一个可读可写的字符串，该字符串是 URL 的锚部分（从 # 号开始的部分）。<ul>
+<li>host<br>属性是一个可读可写的字符串，可设置或返回当前 URL 的主机名称和端口号。</li>
+<li>hostname<br>属性是一个可读可写的字符串，可设置或返回当前 URL 的主机名。</li>
+<li>pathname<br>属性是一个可读可写的字符串，可设置或返回当前 URL 的路径部分。</li>
+<li>port<br>属性是一个可读可写的字符串，可设置或返回当前 URL 的端口部分。</li>
+<li>protocol<br>属性是一个可读可写的字符串，可设置或返回当前 URL 的协议。</li>
+<li>search<br>属性是一个可读可写的字符串，可设置或返回当前 URL 的查询部分（问号 ? 之后的部分）<h4 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h4></li>
+</ul>
+</li>
+<li>forword()  加载 history 列表中的下一个 URL。</li>
+<li>back()      加载 history 列表中的前一个 URL。</li>
+<li>go()        加载 history 列表中的某个具体页面。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/18/BOM/" data-id="cj8wzgk660000v1yr6s3i57ur" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-window事件" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/10/17/window事件/" class="article-date">
@@ -114,7 +202,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/17/window事件/" data-id="cj8vklpjw0001pyyrvw9t2uru" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/17/window事件/" data-id="cj8wzgk6j0002v1yrqqkjnxqy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -190,21 +278,21 @@
 }else{
     redDiv.innerHTML=&quot;换个手机吧&quot;
 }
-</code></pre><p>下面是螺旋仪的例子</p>
-<p>  window.ondeviceorientation=function(ev){</p>
-<pre><code>    var evObj=window.event ||ev;
-    var alpha=parseInt(evObj.alpha);
-    var beta=parseInt(evObj.beta);
-    var gamma=parseInt(evObj.gamma);
-    blueDiv.innerHTML=&quot;alpha:&quot;+alpha+&quot;&lt;/br&gt;&quot;+&quot;beta:&quot;+beta+&quot;&lt;/br&gt;&quot;+&quot;gamma:&quot;+gamma;
-}
 </code></pre></li>
 </ul>
-
+<p>下面是螺旋仪的例子    </p>
+<pre><code>window.ondeviceorientation=function(ev){
+        var evObj=window.event ||ev;
+        var alpha=parseInt(evObj.alpha);
+        var beta=parseInt(evObj.beta);
+        var gamma=parseInt(evObj.gamma);
+        blueDiv.innerHTML=&quot;alpha:&quot;+alpha+&quot;&lt;/br&gt;&quot;+&quot;beta:&quot;+beta+&quot;&lt;/br&gt;&quot;+&quot;gamma:&quot;+gamma;
+    }
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/17/移动端事件/" data-id="cj8vklpk60005pyyr84jwdi2p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/17/移动端事件/" data-id="cj8wzgk75000bv1yro865khdy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -257,7 +345,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/CSS样式-文字设置/" data-id="cj8vklpjq0000pyyrds29p4qs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/16/CSS样式-文字设置/" data-id="cj8wzgk6l0003v1yrhp75st2x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -322,7 +410,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/清除浮动的几种方式/" data-id="cj8vklpk20003pyyrtaeqotiu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/16/清除浮动的几种方式/" data-id="cj8wzgk710008v1yr4vk5jhxt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -385,7 +473,7 @@ p:first-line对首行进行设置
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/选择器/" data-id="cj8vklpko000cpyyr4lzwjqrp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/16/选择器/" data-id="cj8wzgk7c000dv1yrsnah3kgg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -551,7 +639,7 @@ box.onclick=function(ev){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/事件对象/" data-id="cj8vklpk30004pyyrsir75t1e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/事件对象/" data-id="cj8wzgk6q0005v1yrm91yhezi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -656,7 +744,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/事件/" data-id="cj8vklpk90006pyyrcw03rv2y" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/事件/" data-id="cj8wzgk6n0004v1yr00aubnm7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -835,7 +923,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/简易版时钟/" data-id="cj8vklpkl000apyyr38e80uv7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/简易版时钟/" data-id="cj8wzgk7e000ev1yramtqnzx0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -913,68 +1001,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/碰壁反弹/" data-id="cj8vklpkm000bpyyrzfzfae1z" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-background以及float的设置" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/13/background以及float的设置/" class="article-date">
-  <time datetime="2017-10-13T14:22:06.000Z" itemprop="datePublished">2017-10-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/13/background以及float的设置/">background以及float的设置</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="background的五个属性"><a href="#background的五个属性" class="headerlink" title="background的五个属性"></a>background的五个属性</h3><ul>
-<li><p>background-color：设置背景的颜色</p>
-</li>
-<li><p>background-image：设置背景图片</p>
-</li>
-<li><p>background-position:设置背景的定位</p>
-</li>
-<li><p>background-repeat：设置背景平铺</p>
-</li>
-<li><p>background-size:设置背景尺寸</p>
-</li>
-</ul>
-<p>background:background-color url repeat position/size;background属性可以统一设置，中间以空格隔开，他们没有先后之分，但是一般都是把颜色图片放在前面设置。</p>
-<h3 id="float-浮动设置"><a href="#float-浮动设置" class="headerlink" title="float 浮动设置"></a>float 浮动设置</h3><ul>
-<li><p>float设计之初的作用是做文字环绕，随着逐渐的发展，发现用它来布局非常好，所以现在大都用来布局。</p>
-</li>
-<li><p>float的属性值有left、right none三种方式，</p>
-</li>
-<li><p>设置浮动的元素，会脱离文档流，往设置的方向进行浮动，直到遇到父级的边界或者其他的浮动元素才会停止。</p>
-</li>
-<li><p>通过设置它的高不会撑开父级，所以也会对布局产生影响，所以我们要清除浮动。</p>
-</li>
-<li><p>清除浮动的方法：1.对父级设个高；2.通过对设置浮动后面加一个同级元素，对它设置clear：both；3.也是最常用的方法，通过伪元素来设置清除浮动，例如对.wrap元素来清除浮动，不对后面的布局产生影响：.wrap{content:””;display:block;clear:both;}</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/13/background以及float的设置/" data-id="cj8vklpjz0002pyyrvrjl5g03" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/碰壁反弹/" data-id="cj8wzgk6w0007v1yrxr7jevn5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1018,6 +1045,10 @@ first.onreset=function(){
       <ul>
         
           <li>
+            <a href="/2017/10/18/BOM/">BOM</a>
+          </li>
+        
+          <li>
             <a href="/2017/10/17/window事件/">window事件</a>
           </li>
         
@@ -1031,10 +1062,6 @@ first.onreset=function(){
         
           <li>
             <a href="/2017/10/16/清除浮动的几种方式/">清除浮动的几种方式</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/16/选择器/">选择器</a>
           </li>
         
       </ul>

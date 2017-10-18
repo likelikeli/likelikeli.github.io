@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>BOM | web前端</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="BOMBOM主要就五个对象，下面一一介绍 window对象1.window.open()四个参数  URL到打开的窗口的地址 target 和a 标签的一样 窗口特征 ：可以改变打开的新窗口的特征 是否使用新地址特换当前的历史记录，true是替换，falsely是不替换成新的记录例如   document.onclick=function(){ var newWindow=window.open(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BOM">
+<meta property="og:url" content="http://yoursite.com/2017/10/18/BOM/index.html">
+<meta property="og:site_name" content="web前端">
+<meta property="og:description" content="BOMBOM主要就五个对象，下面一一介绍 window对象1.window.open()四个参数  URL到打开的窗口的地址 target 和a 标签的一样 窗口特征 ：可以改变打开的新窗口的特征 是否使用新地址特换当前的历史记录，true是替换，falsely是不替换成新的记录例如   document.onclick=function(){ var newWindow=window.open(">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-10-18T11:57:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BOM">
+<meta name="twitter:description" content="BOMBOM主要就五个对象，下面一一介绍 window对象1.window.open()四个参数  URL到打开的窗口的地址 target 和a 标签的一样 窗口特征 ：可以改变打开的新窗口的特征 是否使用新地址特换当前的历史记录，true是替换，falsely是不替换成新的记录例如   document.onclick=function(){ var newWindow=window.open(">
+  
+    <link rel="alternate" href="/atom.xml" title="web前端" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">web前端</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">前端一些简单的基础</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-BOM" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/18/BOM/" class="article-date">
+  <time datetime="2017-10-18T11:27:16.000Z" itemprop="datePublished">2017-10-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      BOM
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h2><p>BOM主要就五个对象，下面一一介绍</p>
+<h4 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h4><p>1.window.open()四个参数</p>
+<ul>
+<li>URL到打开的窗口的地址</li>
+<li>target 和a 标签的一样</li>
+<li>窗口特征 ：可以改变打开的新窗口的特征</li>
+<li><p>是否使用新地址特换当前的历史记录，true是替换，falsely是不替换成新的记录<br>例如</p>
+<p>  document.onclick=function(){</p>
+<pre><code>var newWindow=window.open(&quot;http://www.baidu.com&quot;,&quot;_blank&quot;, &quot;width=500,height=300,top=200,left=200&quot;);
+</code></pre><p>  }<br>2.moveBy()两个参数，单位是像素，在原有的基础上偏移多少</p>
+</li>
+<li>第一个值为X轴偏移量</li>
+<li>第二个值Y轴偏移量<br>例如：newWindow.moveBy(200,0);<br>3.moveTo()两个参数，单位是像素，移动到什么地方</li>
+<li>第一个值距离窗口X轴位置</li>
+<li><p>第二个值距离窗口Y轴位置<br>4.window.close()窗口关闭</p>
+<p>  setTimeout(function(){</p>
+<pre><code>// 关闭窗口
+newWindow.close();
+</code></pre><p>  },4000)<br>confirm 待取消按钮的弹框</p>
+<p>  if(confirm(“这是一个比较牛逼的弹框”)){</p>
+<pre><code>console.log(&quot;点了确定&quot;)
+</code></pre><p>  }else{</p>
+<pre><code>console.log(&quot;点了取消&quot;)
+</code></pre><p>  }<br>prompt 带输入框的弹框</p>
+<p>  var name=prompt(“Please enter your name”,””)<br>  console.log(name);<br>例如：newWindow.moveTo(100,100);</p>
+<h4 id="screen对象"><a href="#screen对象" class="headerlink" title="screen对象"></a>screen对象</h4></li>
+<li>availHeight<br>属性声明了显示浏览器的屏幕的可用高度，以像素计。在 Windows 这样的操作系统中，这个可用高度不包括分配给半永久特性（如屏幕底部的任务栏）的垂直空间。</li>
+<li>availWidth<br>属性声明了显示浏览器的屏幕的可用宽度，以像素计。在 Windows 这样的操作系统中，这个可用高度不包括分配给半永久特性（如屏幕底部的任务栏）的垂直空间。</li>
+<li>height<br>属性声明了显示浏览器的屏幕的高度，以像素计。</li>
+<li>width<br>属性声明了显示浏览器的屏幕的宽度，以像素计。</li>
+<li>colorDepth<br>属性返回目标设备或缓冲器上的调色板的比特深度。</li>
+<li>pixelDepth<br>属性返回显示屏幕的颜色分辨率（比特每像素）<h4 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h4></li>
+<li>appCodeName<br>在所有以 Netscape 代码为基础的浏览器中，它的值是 “Mozilla”。为了兼容起见，在 Microsoft 的浏览器中，它的值也是 “Mozilla”。</li>
+<li>appName<br>属性可返回浏览器的名称。appName 属性是一个只读到字符串，声明了浏览器的名称。在基于 Netscape 的浏览器中，这个属性的值是 “Netscape”。在 IE 中，这个属性的值是 “Microsoft Internet Explorer”。其他浏览器可以正确地表示自己或者伪装成其他的浏览器以达到兼容性。</li>
+<li>appVersion<br>属性可返回浏览器的平台和版本信息。该属性是一个只读的字符串。该字符串的第一部分是版本号。把该字符串传递给 parseInt() 只能获取主版本号。该属性的其余部分提供了有关浏览器版本的其他细节，包括运行它的操作系统的信息。</li>
+<li>cookieEnabled<br>属性可返回一个布尔值，如果浏览器启用了 cookie，该属性值为 true。如果禁用了 cookie，则值为 false。</li>
+<li>onLine<br>属性是一个只读的布尔值，声明了系统是否处于脱机模式</li>
+<li>platform<br>属性是一个只读的字符串，声明了运行浏览器的操作系统和（或）硬件平台。</li>
+<li>serAgent<br>属性是一个只读的字符串，声明了浏览器用于 HTTP 请求的用户代理头的值。 一般来讲，它是在 navigator.appCodeName 的值之后加上斜线和 navigator.appVersion 的值构成的。<h4 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h4></li>
+<li>hash<br>属性是一个可读可写的字符串，该字符串是 URL 的锚部分（从 # 号开始的部分）。<ul>
+<li>host<br>属性是一个可读可写的字符串，可设置或返回当前 URL 的主机名称和端口号。</li>
+<li>hostname<br>属性是一个可读可写的字符串，可设置或返回当前 URL 的主机名。</li>
+<li>pathname<br>属性是一个可读可写的字符串，可设置或返回当前 URL 的路径部分。</li>
+<li>port<br>属性是一个可读可写的字符串，可设置或返回当前 URL 的端口部分。</li>
+<li>protocol<br>属性是一个可读可写的字符串，可设置或返回当前 URL 的协议。</li>
+<li>search<br>属性是一个可读可写的字符串，可设置或返回当前 URL 的查询部分（问号 ? 之后的部分）<h4 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h4></li>
+</ul>
+</li>
+<li>forword()  加载 history 列表中的下一个 URL。</li>
+<li>back()      加载 history 列表中的前一个 URL。</li>
+<li>go()        加载 history 列表中的某个具体页面。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/18/BOM/" data-id="cj8wzgk660000v1yr6s3i57ur" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/17/window事件/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">window事件</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/10/18/BOM/">BOM</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/17/window事件/">window事件</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/17/移动端事件/">移动端事件</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/16/CSS样式-文字设置/">CSS样式-文字设置</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/16/清除浮动的几种方式/">清除浮动的几种方式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 李可利<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

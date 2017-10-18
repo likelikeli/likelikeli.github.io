@@ -66,6 +66,67 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-background以及float的设置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/13/background以及float的设置/" class="article-date">
+  <time datetime="2017-10-13T14:22:06.000Z" itemprop="datePublished">2017-10-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/13/background以及float的设置/">background以及float的设置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="background的五个属性"><a href="#background的五个属性" class="headerlink" title="background的五个属性"></a>background的五个属性</h3><ul>
+<li><p>background-color：设置背景的颜色</p>
+</li>
+<li><p>background-image：设置背景图片</p>
+</li>
+<li><p>background-position:设置背景的定位</p>
+</li>
+<li><p>background-repeat：设置背景平铺</p>
+</li>
+<li><p>background-size:设置背景尺寸</p>
+</li>
+</ul>
+<p>background:background-color url repeat position/size;background属性可以统一设置，中间以空格隔开，他们没有先后之分，但是一般都是把颜色图片放在前面设置。</p>
+<h3 id="float-浮动设置"><a href="#float-浮动设置" class="headerlink" title="float 浮动设置"></a>float 浮动设置</h3><ul>
+<li><p>float设计之初的作用是做文字环绕，随着逐渐的发展，发现用它来布局非常好，所以现在大都用来布局。</p>
+</li>
+<li><p>float的属性值有left、right none三种方式，</p>
+</li>
+<li><p>设置浮动的元素，会脱离文档流，往设置的方向进行浮动，直到遇到父级的边界或者其他的浮动元素才会停止。</p>
+</li>
+<li><p>通过设置它的高不会撑开父级，所以也会对布局产生影响，所以我们要清除浮动。</p>
+</li>
+<li><p>清除浮动的方法：1.对父级设个高；2.通过对设置浮动后面加一个同级元素，对它设置clear：both；3.也是最常用的方法，通过伪元素来设置清除浮动，例如对.wrap元素来清除浮动，不对后面的布局产生影响：.wrap{content:””;display:block;clear:both;}</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/13/background以及float的设置/" data-id="cj8wzgk6f0001v1yr5nu2vljc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-简单的HTML基础" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/10/13/简单的HTML基础/" class="article-date">
@@ -118,7 +179,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/13/简单的HTML基础/" data-id="cj8vklpkj0009pyyr70l5ewie" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/13/简单的HTML基础/" data-id="cj8wzgk730009v1yrshjns7af" class="article-share-link">Share</a>
       
       
     </footer>
@@ -161,7 +222,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/12/移动端布局/" data-id="cj8vklpkg0008pyyrdxcqos3w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/12/移动端布局/" data-id="cj8wzgk74000av1yrzafoerlf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -223,7 +284,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/11/第一天大富翁/" data-id="cj8vklpkb0007pyyrl5myj1d2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/11/第一天大富翁/" data-id="cj8wzgk7a000cv1yrgi0gq2hf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -268,7 +329,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/11/hello-world/" data-id="cj8vklpkr000dpyyr03r9u97m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/11/hello-world/" data-id="cj8wzgk6t0006v1yr64u54r39" class="article-share-link">Share</a>
       
       
     </footer>
@@ -312,6 +373,10 @@
       <ul>
         
           <li>
+            <a href="/2017/10/18/BOM/">BOM</a>
+          </li>
+        
+          <li>
             <a href="/2017/10/17/window事件/">window事件</a>
           </li>
         
@@ -325,10 +390,6 @@
         
           <li>
             <a href="/2017/10/16/清除浮动的几种方式/">清除浮动的几种方式</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/16/选择器/">选择器</a>
           </li>
         
       </ul>

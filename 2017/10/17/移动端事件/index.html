@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="web前端">
 <meta property="og:description" content="移动端事件触屏事件移动端事件要比PC端要简单的多，移动端主要就有ontouchstart ontouchend ontouchmove ontouchcancel 几种下面来一一介绍  ontouchstart相当于PC端的onmousedown   box.ontouchstart=function(){ box.style.left=&amp;quot;200px&amp;quot;;   }用法和onmou">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-17T12:13:41.000Z">
+<meta property="og:updated_time" content="2017-10-17T12:18:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端事件">
 <meta name="twitter:description" content="移动端事件触屏事件移动端事件要比PC端要简单的多，移动端主要就有ontouchstart ontouchend ontouchmove ontouchcancel 几种下面来一一介绍  ontouchstart相当于PC端的onmousedown   box.ontouchstart=function(){ box.style.left=&amp;quot;200px&amp;quot;;   }用法和onmou">
@@ -134,21 +134,21 @@
 }else{
     redDiv.innerHTML=&quot;换个手机吧&quot;
 }
-</code></pre><p>下面是螺旋仪的例子</p>
-<p>  window.ondeviceorientation=function(ev){</p>
-<pre><code>    var evObj=window.event ||ev;
-    var alpha=parseInt(evObj.alpha);
-    var beta=parseInt(evObj.beta);
-    var gamma=parseInt(evObj.gamma);
-    blueDiv.innerHTML=&quot;alpha:&quot;+alpha+&quot;&lt;/br&gt;&quot;+&quot;beta:&quot;+beta+&quot;&lt;/br&gt;&quot;+&quot;gamma:&quot;+gamma;
-}
 </code></pre></li>
 </ul>
-
+<p>下面是螺旋仪的例子    </p>
+<pre><code>window.ondeviceorientation=function(ev){
+        var evObj=window.event ||ev;
+        var alpha=parseInt(evObj.alpha);
+        var beta=parseInt(evObj.beta);
+        var gamma=parseInt(evObj.gamma);
+        blueDiv.innerHTML=&quot;alpha:&quot;+alpha+&quot;&lt;/br&gt;&quot;+&quot;beta:&quot;+beta+&quot;&lt;/br&gt;&quot;+&quot;gamma:&quot;+gamma;
+    }
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/17/移动端事件/" data-id="cj8vklpk60005pyyr84jwdi2p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/17/移动端事件/" data-id="cj8wzgk75000bv1yro865khdy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -206,6 +206,10 @@
       <ul>
         
           <li>
+            <a href="/2017/10/18/BOM/">BOM</a>
+          </li>
+        
+          <li>
             <a href="/2017/10/17/window事件/">window事件</a>
           </li>
         
@@ -219,10 +223,6 @@
         
           <li>
             <a href="/2017/10/16/清除浮动的几种方式/">清除浮动的几种方式</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/16/选择器/">选择器</a>
           </li>
         
       </ul>
