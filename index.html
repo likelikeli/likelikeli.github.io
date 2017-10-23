@@ -66,6 +66,136 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-jQuery获取元素以及CSS样式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/23/jQuery获取元素以及CSS样式/" class="article-date">
+  <time datetime="2017-10-23T11:15:11.000Z" itemprop="datePublished">2017-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/23/jQuery获取元素以及CSS样式/">jQuery获取元素以及CSS样式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h3><p>$(“”)里面给的是字符串-选择器<br>下面举几个小例子：</p>
+<pre><code>console.log($(&quot;.item&quot;));
+console.log($(&quot;div&quot;));
+console.log($(&quot;input[type=radio]&quot;));
+console.log($(&quot;div:not(.item)&quot;));
+</code></pre><p>first 是第一个P标签</p>
+<pre><code>console.log($(&quot;p:first&quot;));
+console.log($(&quot;p:nth-child(1)&quot;));
+$(&quot;p&quot;).css(&quot;color&quot;,&quot;red&quot;);
+</code></pre><p>odd基数索引 even偶数索引</p>
+<pre><code>$(&quot;p:odd&quot;).css(&quot;color&quot;,&quot;red&quot;);
+$(&quot;p:even&quot;).css(&quot;color&quot;,&quot;red&quot;);
+</code></pre><p>eq(2)从 0 开始计数</p>
+<pre><code>$(&quot;p:eq(2)&quot;).css(&quot;color&quot;,&quot;red&quot;)
+</code></pre><p>gt(2)从 0 开始计数 2之后的变换</p>
+<pre><code>$(&quot;p:gt(2)&quot;).css(&quot;color&quot;,&quot;red&quot;)
+</code></pre><h3 id="创建元素-添加元素"><a href="#创建元素-添加元素" class="headerlink" title="创建元素 添加元素"></a>创建元素 添加元素</h3><ul>
+<li><p>append添加 appendTo加入到</p>
+<p>   p.append(span)给p插入子集span<br>   p.appendTo(body)把p插入body里面</p>
+</li>
+<li><p>prepend和prependTo用法和append一样，不同点在于prepend是在最前面插入</p>
+<p>  $(“</p><p class="item2" style="color:green;">插个P标签</p>“).prepend($(“<span>span标签</span>“)).prependTo($(“.box”))<p></p>
+</li>
+<li><p>after  content 后面有一个item2</p>
+<p>  $(“.content”).after($(“.item2”))<br>  $(“.content”).after($(“.item2”))</p>
+</li>
+<li><p>insertAfter 把item2插入到content之后</p>
+<p>  // $(“.item2”).insertAfter($(“.content”))</p>
+</li>
+<li><p>包裹p 把每个p包裹在div内  wrapAll把所有的p都包裹在同一个div里面，父级在第一个p的位置</p>
+<p>  $(“p”).wrap(“<div class="BB"></div>“);</p>
+</li>
+<li><p>当参数是函数的时候，jq会把函数的返回值作为包裹p父级来使用</p>
+<p>  $(“p”).wrap(function(){</p>
+<pre><code>var divS=document.getElementsByTagName(&quot;div&quot;);
+for(var i=0;i&lt;divS.length;i++){
+    if(divS[i].innerHTML==&quot;显示2&quot;){
+        return divS[i];
+    }
+}
+</code></pre><p>  });</p>
+</li>
+<li><p>unwrap 把父级消失</p>
+<p>  $(“.content”).unwrap(“.box”)</p>
+</li>
+<li><p>把所有段落内的每个子内容加粗<br>   $(“p”).wrapInner(“<b>12</b>“);</p>
+</li>
+</ul>
+<h3 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h3><pre><code>* remove这个方法不会把匹配的元素从jQuery对象中删除，因而可以在将来再使用这些匹配的元素。但除了这个元素本身得以保留之外，其他的比如绑定的事件，附加的数据等都会被移除。
+* detach这个方法不会把匹配的元素从jQuery对象中删除，因而可以在将来再使用这些匹配的元素。与remove()不同的是，所有绑定的事件、附加的数据等都会保留下来。
+
+ $(&quot;p:nth-child(3)&quot;).css(&quot;color&quot;, &quot;yellow&quot;).click(function(){
+         console.log(&quot;123&quot;);
+     }).detach().appendTo(document.body);
+     $(&quot;p:nth-child(3)&quot;).css(&quot;color&quot;, &quot;yellow&quot;).click(function(){
+         console.log(&quot;123&quot;);
+     }).remove().appendTo(document.body);
+</code></pre><h3 id="修改-获取CSS样式"><a href="#修改-获取CSS样式" class="headerlink" title="修改/获取CSS样式"></a>修改/获取CSS样式</h3><p>css和style 属性都可以获取到</p>
+<pre><code>console.log($(&quot;.content&quot;).css(&quot;color&quot;));
+console.log($(&quot;p:eq(1)&quot;).css(&quot;color&quot;));
+console.log($(&quot;p&quot;).eq(1).css(&quot;color&quot;));
+</code></pre><p>设置样式第一种样式    </p>
+<pre><code>$(&quot;p&quot;).css(&quot;color&quot;,&quot;pink&quot;);
+</code></pre><p>设置样式第二种样式</p>
+<pre><code>$(&quot;p&quot;).css({
+        color:&quot;red&quot;,
+        border:&quot;1px solid green&quot;
+
+    } )
+</code></pre><p>设置样式第三种样式</p>
+<pre><code>var cArr=[&quot;yellow&quot;,&quot;red&quot;,&quot;green&quot;,&quot;purple&quot;,&quot;cyan&quot;,&quot;pink&quot;]
+$(&quot;p:last&quot;).css(&quot;color&quot;,function(index,oldvalue){
+    console.log(index,oldvalue);
+    return cArr[index];
+})
+$(&quot;p&quot;).css({
+    width:function(index,oldValue){
+        return 100*(index+1);
+    },
+    height:function(){
+        return 50;
+    },
+    &quot;text-align&quot;:function(){
+        return &quot;center&quot;;
+    },
+    &quot;line-height&quot;:function(){
+        return 50+&quot;px&quot;;
+    }
+})
+</code></pre><ul>
+<li><p>修改/获取内容</p>
+<p>  $(“p”).html(“<div>hello</div>“)<br>  $(“img”).attr(“src”, “1.png”);<br>  $(“p”).text(“hel”)<br>以上只是一部分，还有很多知识要学的，下面给你们推荐一个链接可以去自学<br><a href="http://jquery.cuishifeng.cn/index.html" target="_blank" rel="external">http://jquery.cuishifeng.cn/index.html</a></p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/23/jQuery获取元素以及CSS样式/" data-id="cj943kil80001glyroiddadmz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-BOM" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/10/18/BOM/" class="article-date">
@@ -144,7 +274,7 @@ newWindow.close();
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/18/BOM/" data-id="cj8wzgk660000v1yr6s3i57ur" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/18/BOM/" data-id="cj943kil20000glyrtlyly8wl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -202,7 +332,7 @@ newWindow.close();
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/17/window事件/" data-id="cj8wzgk6j0002v1yrqqkjnxqy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/17/window事件/" data-id="cj943kilf0004glyrhyx353nz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -292,7 +422,7 @@ newWindow.close();
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/17/移动端事件/" data-id="cj8wzgk75000bv1yro865khdy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/17/移动端事件/" data-id="cj943kiln0007glyro7gg7o75" class="article-share-link">Share</a>
       
       
     </footer>
@@ -345,7 +475,7 @@ newWindow.close();
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/CSS样式-文字设置/" data-id="cj8wzgk6l0003v1yrhp75st2x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/16/CSS样式-文字设置/" data-id="cj943kilc0002glyrn60kd7k7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -410,7 +540,7 @@ newWindow.close();
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/清除浮动的几种方式/" data-id="cj8wzgk710008v1yr4vk5jhxt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/16/清除浮动的几种方式/" data-id="cj943kilh0005glyr3m88mnlu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -473,7 +603,7 @@ p:first-line对首行进行设置
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/选择器/" data-id="cj8wzgk7c000dv1yrsnah3kgg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/16/选择器/" data-id="cj943kima000fglyry1imvpgz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -639,7 +769,7 @@ box.onclick=function(ev){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/事件对象/" data-id="cj8wzgk6q0005v1yrm91yhezi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/事件对象/" data-id="cj943kilm0006glyrr982ygzi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -744,7 +874,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/事件/" data-id="cj8wzgk6n0004v1yr00aubnm7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/事件/" data-id="cj943kim7000eglyrzvh0te2t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -923,85 +1053,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/简易版时钟/" data-id="cj8wzgk7e000ev1yramtqnzx0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-碰壁反弹" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/14/碰壁反弹/" class="article-date">
-  <time datetime="2017-10-14T01:40:47.000Z" itemprop="datePublished">2017-10-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/14/碰壁反弹/">碰壁反弹</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="碰壁反弹"><a href="#碰壁反弹" class="headerlink" title="碰壁反弹"></a>碰壁反弹</h3><p>源代码</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-    &lt;head&gt;
-        &lt;meta charset=&quot;UTF-8&quot;&gt;
-        &lt;title&gt;碰壁反弹&lt;/title&gt;
-        &lt;style type=&quot;text/css&quot;&gt;
-            #wrap{
-                width: 600px;
-                height: 410px;
-                margin: 100px auto;
-                border: 1px solid red;
-            }
-            #box{
-                width: 50px;
-                height: 50px;
-                background: purple;
-                border-radius: 50%;
-            }
-        &lt;/style&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;div id=&quot;wrap&quot;&gt;
-            &lt;div id=&quot;box&quot;&gt;&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/body&gt;
-    &lt;script type=&quot;text/javascript&quot;&gt;
-        var box=document.getElementById(&quot;box&quot;);
-        var a=0;
-        var b=0;
-         var timer=setInterval(function(){
-            a++;
-            b+=3;        
-            box.style.transform=&apos;translateX(&apos;+Math.abs(a)+&apos;px)&apos;+&apos;translateY(&apos;+Math.abs(b)+&apos;px)&apos;;if(a==550){
-                a=-550
-            }
-            if(b==360){
-                b=-360
-            }
-        },10)
-    &lt;/script&gt;
-&lt;/html&gt;
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/碰壁反弹/" data-id="cj8wzgk6w0007v1yrxr7jevn5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/简易版时钟/" data-id="cj943kilx000cglyrs1uaufq7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1045,6 +1097,10 @@ first.onreset=function(){
       <ul>
         
           <li>
+            <a href="/2017/10/23/jQuery获取元素以及CSS样式/">jQuery获取元素以及CSS样式</a>
+          </li>
+        
+          <li>
             <a href="/2017/10/18/BOM/">BOM</a>
           </li>
         
@@ -1058,10 +1114,6 @@ first.onreset=function(){
         
           <li>
             <a href="/2017/10/16/CSS样式-文字设置/">CSS样式-文字设置</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/16/清除浮动的几种方式/">清除浮动的几种方式</a>
           </li>
         
       </ul>
