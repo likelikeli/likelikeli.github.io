@@ -66,6 +66,185 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-购物车简单操作/练习购物车" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/24/购物车简单操作/练习购物车/" class="article-date">
+  <time datetime="2017-10-24T02:56:18.000Z" itemprop="datePublished">2017-10-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="购物车.css">
+		<link rel="stylesheet" type="text/css" href="reset.css">
+	</head>
+	<body>
+		<table class="box" border="1">
+			<tr class="header">
+				<td width="90">
+					<input type="checkbox" id="selectAll">
+					<label for="selectAll">全选</label>
+				</td>
+				<td width="230">商品</td>
+				<td width="173">单价</td>
+				<td width="127">数量</td>
+				<td width="197">小计</td>
+				<td>操作</td>
+			</tr>
+			<tr>
+				<td class="check">
+					<input type="checkbox" class="checkt">
+				</td>
+				<td class="proName">
+					<img src="" alt="">
+					<span>佳能</span>
+				</td>
+				<td class="proPirce"> 
+					<span>100</span>
+				</td>
+				<td class="proCount">
+					<input type="button" value="-" class="ys">
+					<input type="text" class="count" value="0">
+					<input type="button" value="+" class="ys">
+				</td>
+				<td class="proMoney">
+					<span>0</span>
+				</td>
+				<td>
+					<input type="button" value="删除" class="proDel">
+				</td>
+			</tr>
+			<tr>
+				<td class="check">
+					<input type="checkbox" class="checkt">
+				</td>
+				<td class="proName">
+					<img src="" alt="">
+					<span>佳能</span>
+				</td>
+				<td class="proPirce"> 
+					<span>200</span>
+				</td>
+				<td class="proCount">
+					<input type="button" value="-" class="ys">
+					<input type="text" class="count" value="0">
+					<input type="button" value="+" class="ys">
+				</td>
+				<td class="proMoney">
+					<span>0</span>
+				</td>
+				<td>
+					<input type="button" value="删除" class="proDel">
+				</td>
+			</tr>
+			<tr>
+				<td class="check">
+					<input type="checkbox" class="checkt">
+				</td>
+				<td class="proName">
+					<img src="" alt="">
+					<span>佳能</span>
+				</td>
+				<td class="proPirce"> 
+					<span>300</span>
+				</td>
+				<td class="proCount">
+					<input type="button" value="-" class="ys">
+					<input type="text" class="count" value="0">
+					<input type="button" value="+" class="ys">
+				</td>
+				<td class="proMoney">
+					<span>0</span>
+				</td>
+				<td>
+					<input type="button" value="删除" class="proDel">
+				</td>
+			</tr>
+			
+			<tr class="footer">
+				<td colspan="6">
+					<div class="delAll">删除所有</div>
+					<div class="proTotal">已选商品<span>0</span>件</div>
+					<div class="totalPirces">合计：￥<span>0</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	// 六个触发事件地方
+	// 全选  单选 删除 删除所有  加 减
+	// 全选
+	$("#selectAll").click(function(){
+		$(".checkt").prop("checked", this.checked);	
+		demo();
+		// change();
+	})
+	// 单选
+		$(".checkt").click(function(){
+			$("#selectAll").prop("checked",$(".checkt:checked").length == $(".checkt").length);
+			demo();
+		})
+	// 删除所有
+	$(".delAll").click(function(){
+		$(".checkt:checked").parents("tr").remove();
+		demo();
+	})
+
+	// 删除proDel
+	$(".proDel").click(function(){
+		$(this).parents("tr").remove();
+		demo();
+	})
+	// 加减proCount
+	$(".ys").click(function(){
+		var _this=this
+		var vals=($(_this).siblings(".count"))[0].value
+		$(this).val()=="-"? vals=parseInt(vals)-1:vals=parseInt(vals)+1
+		$(_this).siblings(".count").val(vals)
+		if(($(_this).siblings(".count"))[0].value<=0){
+			($(_this).siblings(".count"))[0].value=0;
+		}
+		// 改变小计proPirce
+		var moneys=parseInt($(_this).siblings(".count").val())*$(_this).parents("td").siblings(".proPirce").children("span").html()
+		$(_this).parents("td").siblings(".proMoney").children("span").html(moneys)
+		demo();
+	})
+	// 改变合计和件数
+	function demo(){
+		
+		$(".proTotal span").html($(".checkt:checked").length);
+		$(".totalPirces span").html(function(){
+			var monys=0;
+			$(".checkt:checked").parent().siblings(".proMoney").children().each(function(index, el){
+				monys += parseInt(el.innerHTML);
+			})
+			return monys;
+		})
+	}
+	</script>
+</html>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/24/购物车简单操作/练习购物车/" data-id="cj983jvcx000gkxyrn4v3oo2f" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-jQuery获取元素以及CSS样式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/10/23/jQuery获取元素以及CSS样式/" class="article-date">
@@ -186,7 +365,7 @@ $(&quot;p&quot;).css({
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/23/jQuery获取元素以及CSS样式/" data-id="cj943kil80001glyroiddadmz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/23/jQuery获取元素以及CSS样式/" data-id="cj983jvb50007kxyrfgtmoz6b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -274,7 +453,7 @@ newWindow.close();
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/18/BOM/" data-id="cj943kil20000glyrtlyly8wl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/18/BOM/" data-id="cj983jvak0000kxyrj5vj5cqy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -332,7 +511,7 @@ newWindow.close();
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/17/window事件/" data-id="cj943kilf0004glyrhyx353nz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/17/window事件/" data-id="cj983jvay0004kxyr4dbqtze3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -422,7 +601,7 @@ newWindow.close();
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/17/移动端事件/" data-id="cj943kiln0007glyro7gg7o75" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/17/移动端事件/" data-id="cj983jvbf000bkxyrb5jel6ta" class="article-share-link">Share</a>
       
       
     </footer>
@@ -475,7 +654,7 @@ newWindow.close();
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/CSS样式-文字设置/" data-id="cj943kilc0002glyrn60kd7k7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/16/CSS样式-文字设置/" data-id="cj983jvaq0001kxyrz5djw8c3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -540,7 +719,7 @@ newWindow.close();
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/清除浮动的几种方式/" data-id="cj943kilh0005glyr3m88mnlu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/16/清除浮动的几种方式/" data-id="cj983jvb00005kxyrhugo9xdn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -603,7 +782,7 @@ p:first-line对首行进行设置
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/选择器/" data-id="cj943kima000fglyry1imvpgz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/16/选择器/" data-id="cj983jvbm000fkxyrqqcjc79d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -769,7 +948,7 @@ box.onclick=function(ev){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/事件对象/" data-id="cj943kilm0006glyrr982ygzi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/事件对象/" data-id="cj983jvb30006kxyrohi4t23s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -874,186 +1053,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/事件/" data-id="cj943kim7000eglyrzvh0te2t" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-简易版时钟" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/14/简易版时钟/" class="article-date">
-  <time datetime="2017-10-14T01:52:21.000Z" itemprop="datePublished">2017-10-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/14/简易版时钟/">简易版时钟</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>自己编写的简单的时钟，代码很简单，很容易看懂<br>代码：</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-    &lt;head&gt;
-        &lt;meta charset=&quot;UTF-8&quot;&gt;
-        &lt;title&gt;时钟&lt;/title&gt;
-        &lt;style type=&quot;text/css&quot;&gt;
-            .wrap{
-                width: 300px;
-                height: 300px;
-                border: 10px solid black;
-                box-shadow: 2px 0px 3px 3px gray inset;
-                border-radius: 50%;
-                position: relative;
-                margin: 200px auto;
-                background: url(&quot;1.jpg&quot;)no-repeat;
-                background-size: 300px 300px;
-            }
-            .box{
-                width: 280px;
-                height: 20px;
-                position: absolute;
-                left: 0;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                margin: auto;                
-            }
-            .box span{
-                width: 20px;
-                height: 20px;
-                line-height: 20px;
-                text-align: center;
-                float: left;
-                color: white;
-            }            
-            .box1{
-                width: 10px ;
-                height: 10px;
-                border-radius: 50%;
-                background: black;
-                position: absolute;
-                left: 0;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                margin: auto;
-                z-index: 4;
-            }
-            #ho{
-                width: 10px;
-                height: 80px;
-                background: green;
-                position: absolute;
-                transform-origin:5px 100%;
-                top: 70px;
-                left: 145px;
-                border-top-left-radius: 5px 60px;
-                border-top-right-radius: 5px 60px;
-                z-index: 3;
-            }
-            #min{
-                width: 8px;
-                height: 100px;
-                background: red;
-                position: absolute;
-                transform-origin:4px 100%;
-                top: 50px;
-                left: 146px;
-                border-top-left-radius: 5px 60px;
-                border-top-right-radius: 5px 60px;
-                z-index: 2;
-            }
-            #sec{
-                width: 6px;
-                height: 120px;
-                background: blue;
-                position: absolute;
-                border-top-left-radius: 5px 60px;
-                border-top-right-radius: 5px 60px;
-                transform-origin:3px 100%;
-                top: 30px;
-                left: 147px;
-            }
-        &lt;/style&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;div class=&quot;wrap&quot;&gt;
-            &lt;!-- div.box(span{$})*12 --&gt;
-            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;9&lt;/span&gt;&lt;/div&gt;
-            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;10&lt;/span&gt;&lt;/div&gt;
-            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;11&lt;/span&gt;&lt;/div&gt;
-            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;12&lt;/span&gt;&lt;/div&gt;
-            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;1&lt;/span&gt;&lt;/div&gt;
-            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;2&lt;/span&gt;&lt;/div&gt;
-            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;3&lt;/span&gt;&lt;/div&gt;
-            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;4&lt;/span&gt;&lt;/div&gt;
-            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;5&lt;/span&gt;&lt;/div&gt;
-            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;6&lt;/span&gt;&lt;/div&gt;
-            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;7&lt;/span&gt;&lt;/div&gt;
-            &lt;div class=&quot;box&quot;&gt;&lt;span&gt;8&lt;/span&gt;&lt;/div&gt;
-            &lt;div class=&quot;box1&quot;&gt;&lt;/div&gt;
-            &lt;div id=&quot;ho&quot;&gt;&lt;/div&gt;
-            &lt;div id=&quot;min&quot;&gt;&lt;/div&gt;
-            &lt;div id=&quot;sec&quot;&gt;&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/body&gt;
-    &lt;script type=&quot;text/javascript&quot;&gt;
-        var box=document.getElementsByClassName(&quot;box&quot;);
-        var span=document.getElementsByTagName(&quot;span&quot;);
-        var ho=document.getElementById(&quot;ho&quot;);
-        var min=document.getElementById(&quot;min&quot;);
-        var sec=document.getElementById(&quot;sec&quot;);
-        for(var i=0;i&lt;12;i++){
-            a=30*i;
-            b=(-30)*i;
-            box[i].style.transform=&apos;rotate(&apos;+a+&apos;deg)&apos;;
-            span[i].style.transform=&apos;rotate(&apos;+b+&apos;deg)&apos;;
-        }
-        var date=new Date();
-            var minutes=date.getMinutes();
-            var hours=date.getHours();
-            var seconds=date.getSeconds();
-            var c=hours*30+(minutes/60)*30+(seconds/60/60)*30;
-            var d=minutes*6+(seconds/60)*6;
-            var e=seconds*6;
-            ho.style.transform=&apos;rotate(&apos;+c+&apos;deg)&apos;;
-            min.style.transform=&apos;rotate(&apos;+d+&apos;deg)&apos;;
-            sec.style.transform=&apos;rotate(&apos;+e+&apos;deg)&apos;;
-        setInterval(function(){
-            var date=new Date();
-            var minutes=date.getMinutes();
-            var hours=date.getHours();
-            var seconds=date.getSeconds();
-            var c=hours*30+(minutes/60)*30+(seconds/60/60)*30;
-            var d=minutes*6+(seconds/60)*6;
-            var e=seconds*6;
-            ho.style.transform=&apos;rotate(&apos;+c+&apos;deg)&apos;;
-            min.style.transform=&apos;rotate(&apos;+d+&apos;deg)&apos;;
-            sec.style.transform=&apos;rotate(&apos;+e+&apos;deg)&apos;;
-        },1000)        
-    &lt;/script&gt;
-&lt;/html&gt;
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/简易版时钟/" data-id="cj943kilx000cglyrs1uaufq7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/事件/" data-id="cj983jvbl000ekxyrkrik9dmh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1084,7 +1084,7 @@ first.onreset=function(){
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li></ul>
     </div>
   </div>
 
@@ -1095,6 +1095,10 @@ first.onreset=function(){
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/10/24/购物车简单操作/练习购物车/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2017/10/23/jQuery获取元素以及CSS样式/">jQuery获取元素以及CSS样式</a>
@@ -1110,10 +1114,6 @@ first.onreset=function(){
         
           <li>
             <a href="/2017/10/17/移动端事件/">移动端事件</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/16/CSS样式-文字设置/">CSS样式-文字设置</a>
           </li>
         
       </ul>

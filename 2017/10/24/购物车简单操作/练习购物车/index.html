@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>web前端</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Document 		 		 	 	 		 			 				 					 					全选 				 				商品 				单价 				数量 				小计 				操作 			 			 				 					 				 				 					 					佳能 				 				  					100">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web前端">
+<meta property="og:url" content="http://yoursite.com/2017/10/24/购物车简单操作/练习购物车/index.html">
+<meta property="og:site_name" content="web前端">
+<meta property="og:description" content="Document 		 		 	 	 		 			 				 					 					全选 				 				商品 				单价 				数量 				小计 				操作 			 			 				 					 				 				 					 					佳能 				 				  					100">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-10-24T14:22:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="web前端">
+<meta name="twitter:description" content="Document 		 		 	 	 		 			 				 					 					全选 				 				商品 				单价 				数量 				小计 				操作 			 			 				 					 				 				 					 					佳能 				 				  					100">
+  
+    <link rel="alternate" href="/atom.xml" title="web前端" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">web前端</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">前端一些简单的基础</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-购物车简单操作/练习购物车" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/24/购物车简单操作/练习购物车/" class="article-date">
+  <time datetime="2017-10-24T02:56:18.000Z" itemprop="datePublished">2017-10-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="购物车.css">
+		<link rel="stylesheet" type="text/css" href="reset.css">
+	</head>
+	<body>
+		<table class="box" border="1">
+			<tr class="header">
+				<td width="90">
+					<input type="checkbox" id="selectAll">
+					<label for="selectAll">全选</label>
+				</td>
+				<td width="230">商品</td>
+				<td width="173">单价</td>
+				<td width="127">数量</td>
+				<td width="197">小计</td>
+				<td>操作</td>
+			</tr>
+			<tr>
+				<td class="check">
+					<input type="checkbox" class="checkt">
+				</td>
+				<td class="proName">
+					<img src="" alt="">
+					<span>佳能</span>
+				</td>
+				<td class="proPirce"> 
+					<span>100</span>
+				</td>
+				<td class="proCount">
+					<input type="button" value="-" class="ys">
+					<input type="text" class="count" value="0">
+					<input type="button" value="+" class="ys">
+				</td>
+				<td class="proMoney">
+					<span>0</span>
+				</td>
+				<td>
+					<input type="button" value="删除" class="proDel">
+				</td>
+			</tr>
+			<tr>
+				<td class="check">
+					<input type="checkbox" class="checkt">
+				</td>
+				<td class="proName">
+					<img src="" alt="">
+					<span>佳能</span>
+				</td>
+				<td class="proPirce"> 
+					<span>200</span>
+				</td>
+				<td class="proCount">
+					<input type="button" value="-" class="ys">
+					<input type="text" class="count" value="0">
+					<input type="button" value="+" class="ys">
+				</td>
+				<td class="proMoney">
+					<span>0</span>
+				</td>
+				<td>
+					<input type="button" value="删除" class="proDel">
+				</td>
+			</tr>
+			<tr>
+				<td class="check">
+					<input type="checkbox" class="checkt">
+				</td>
+				<td class="proName">
+					<img src="" alt="">
+					<span>佳能</span>
+				</td>
+				<td class="proPirce"> 
+					<span>300</span>
+				</td>
+				<td class="proCount">
+					<input type="button" value="-" class="ys">
+					<input type="text" class="count" value="0">
+					<input type="button" value="+" class="ys">
+				</td>
+				<td class="proMoney">
+					<span>0</span>
+				</td>
+				<td>
+					<input type="button" value="删除" class="proDel">
+				</td>
+			</tr>
+			
+			<tr class="footer">
+				<td colspan="6">
+					<div class="delAll">删除所有</div>
+					<div class="proTotal">已选商品<span>0</span>件</div>
+					<div class="totalPirces">合计：￥<span>0</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	// 六个触发事件地方
+	// 全选  单选 删除 删除所有  加 减
+	// 全选
+	$("#selectAll").click(function(){
+		$(".checkt").prop("checked", this.checked);	
+		demo();
+		// change();
+	})
+	// 单选
+		$(".checkt").click(function(){
+			$("#selectAll").prop("checked",$(".checkt:checked").length == $(".checkt").length);
+			demo();
+		})
+	// 删除所有
+	$(".delAll").click(function(){
+		$(".checkt:checked").parents("tr").remove();
+		demo();
+	})
+
+	// 删除proDel
+	$(".proDel").click(function(){
+		$(this).parents("tr").remove();
+		demo();
+	})
+	// 加减proCount
+	$(".ys").click(function(){
+		var _this=this
+		var vals=($(_this).siblings(".count"))[0].value
+		$(this).val()=="-"? vals=parseInt(vals)-1:vals=parseInt(vals)+1
+		$(_this).siblings(".count").val(vals)
+		if(($(_this).siblings(".count"))[0].value<=0){
+			($(_this).siblings(".count"))[0].value=0;
+		}
+		// 改变小计proPirce
+		var moneys=parseInt($(_this).siblings(".count").val())*$(_this).parents("td").siblings(".proPirce").children("span").html()
+		$(_this).parents("td").siblings(".proMoney").children("span").html(moneys)
+		demo();
+	})
+	// 改变合计和件数
+	function demo(){
+		
+		$(".proTotal span").html($(".checkt:checked").length);
+		$(".totalPirces span").html(function(){
+			var monys=0;
+			$(".checkt:checked").parent().siblings(".proMoney").children().each(function(index, el){
+				monys += parseInt(el.innerHTML);
+			})
+			return monys;
+		})
+	}
+	</script>
+</html>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/24/购物车简单操作/练习购物车/" data-id="cj983jvcx000gkxyrn4v3oo2f" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/23/jQuery获取元素以及CSS样式/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">jQuery获取元素以及CSS样式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/10/24/购物车简单操作/练习购物车/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/23/jQuery获取元素以及CSS样式/">jQuery获取元素以及CSS样式</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/18/BOM/">BOM</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/17/window事件/">window事件</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/17/移动端事件/">移动端事件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 李可利<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

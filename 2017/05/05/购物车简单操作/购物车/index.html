@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>background以及float的设置 | web前端</title>
+  <title>web前端</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="background的五个属性 background-color：设置背景的颜色  background-image：设置背景图片  background-position:设置背景的定位  background-repeat：设置背景平铺  background-size:设置背景尺寸   background:background-color url repeat position/size;">
+  <meta name="description" content="table.box{ 	width: 900px; 	height:350px; 	margin: 50px auto; 	border-color: #a7cbff; 	border-collapse: collapse; 	text-align: center; } .box tr.header td{ 	height: 32px; 	background-color: #e2f2ff; 	b">
 <meta property="og:type" content="article">
-<meta property="og:title" content="background以及float的设置">
-<meta property="og:url" content="http://yoursite.com/2017/10/13/background以及float的设置/index.html">
+<meta property="og:title" content="web前端">
+<meta property="og:url" content="http://yoursite.com/2017/05/05/购物车简单操作/购物车/index.html">
 <meta property="og:site_name" content="web前端">
-<meta property="og:description" content="background的五个属性 background-color：设置背景的颜色  background-image：设置背景图片  background-position:设置背景的定位  background-repeat：设置背景平铺  background-size:设置背景尺寸   background:background-color url repeat position/size;">
+<meta property="og:description" content="table.box{ 	width: 900px; 	height:350px; 	margin: 50px auto; 	border-color: #a7cbff; 	border-collapse: collapse; 	text-align: center; } .box tr.header td{ 	height: 32px; 	background-color: #e2f2ff; 	b">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-13T14:24:58.000Z">
+<meta property="og:updated_time" content="2017-05-05T01:26:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="background以及float的设置">
-<meta name="twitter:description" content="background的五个属性 background-color：设置背景的颜色  background-image：设置背景图片  background-position:设置背景的定位  background-repeat：设置背景平铺  background-size:设置背景尺寸   background:background-color url repeat position/size;">
+<meta name="twitter:title" content="web前端">
+<meta name="twitter:description" content="table.box{ 	width: 900px; 	height:350px; 	margin: 50px auto; 	border-color: #a7cbff; 	border-collapse: collapse; 	text-align: center; } .box tr.header td{ 	height: 32px; 	background-color: #e2f2ff; 	b">
   
     <link rel="alternate" href="/atom.xml" title="web前端" type="application/atom+xml">
   
@@ -68,58 +68,63 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-background以及float的设置" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-购物车简单操作/购物车" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/10/13/background以及float的设置/" class="article-date">
-  <time datetime="2017-10-13T14:22:06.000Z" itemprop="datePublished">2017-10-13</time>
+    <a href="/2017/05/05/购物车简单操作/购物车/" class="article-date">
+  <time datetime="2017-05-05T01:26:48.000Z" itemprop="datePublished">2017-05-05</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      background以及float的设置
-    </h1>
-  
-
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="background的五个属性"><a href="#background的五个属性" class="headerlink" title="background的五个属性"></a>background的五个属性</h3><ul>
-<li><p>background-color：设置背景的颜色</p>
-</li>
-<li><p>background-image：设置背景图片</p>
-</li>
-<li><p>background-position:设置背景的定位</p>
-</li>
-<li><p>background-repeat：设置背景平铺</p>
-</li>
-<li><p>background-size:设置背景尺寸</p>
-</li>
-</ul>
-<p>background:background-color url repeat position/size;background属性可以统一设置，中间以空格隔开，他们没有先后之分，但是一般都是把颜色图片放在前面设置。</p>
-<h3 id="float-浮动设置"><a href="#float-浮动设置" class="headerlink" title="float 浮动设置"></a>float 浮动设置</h3><ul>
-<li><p>float设计之初的作用是做文字环绕，随着逐渐的发展，发现用它来布局非常好，所以现在大都用来布局。</p>
-</li>
-<li><p>float的属性值有left、right none三种方式，</p>
-</li>
-<li><p>设置浮动的元素，会脱离文档流，往设置的方向进行浮动，直到遇到父级的边界或者其他的浮动元素才会停止。</p>
-</li>
-<li><p>通过设置它的高不会撑开父级，所以也会对布局产生影响，所以我们要清除浮动。</p>
-</li>
-<li><p>清除浮动的方法：1.对父级设个高；2.通过对设置浮动后面加一个同级元素，对它设置clear：both；3.也是最常用的方法，通过伪元素来设置清除浮动，例如对.wrap元素来清除浮动，不对后面的布局产生影响：.wrap{content:””;display:block;clear:both;}</p>
-</li>
-</ul>
+        table.box{
+	width: 900px;
+	height:350px;
+	margin: 50px auto;
+	border-color: #a7cbff;
+	border-collapse: collapse;
+	text-align: center;
+}
+.box tr.header td{
+	height: 32px;
+	background-color: #e2f2ff;
+	border-top: 3px solid #a7cbff;
+}
+.box tr.footer td{
+	height: 50px;
+	background-color: #eaeaea;
+}
+.box tr.footer div{
+	float: left;
+}
+.box tr.footer .delAll{
+	margin: 0px 500px 0px 50px;
+}
+.box tr.footer .proTotal{
+	margin-right: 50px;
+}
+div span{
+	color: red;
+}
+.box td .count{
+	width: 50px;
+}
+.box td input{
+	text-align: center;
+}
+
+
+
+
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/13/background以及float的设置/" data-id="cj983jvax0003kxyrkvqj6r6d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/05/05/购物车简单操作/购物车/" data-id="cj983jvcz000hkxyrqarahe8m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -128,19 +133,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/10/14/碰壁反弹/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/05/24/购物车简单操作/jquery-3.2.1.min/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          碰壁反弹
+          (no title)
         
       </div>
     </a>
   
   
-    <a href="/2017/10/13/简单的HTML基础/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/05/04/购物车简单操作/reset/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">简单的HTML基础</div>
+      <div class="article-nav-title"></div>
     </a>
   
 </nav>
