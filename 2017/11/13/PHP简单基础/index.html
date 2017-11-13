@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>PHP简单基础 | web前端</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="PHP简介PHP（外文名:PHP: Hypertext Preprocessor，中文名：超文本预处理器，是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Java、Perl自创的语法。它可以比CGI或者Perl更快速地执行动态网页。用PHP做出的动态页面与其他的编程语言相比，PHP是将程序嵌入到HTML（">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP简单基础">
+<meta property="og:url" content="http://yoursite.com/2017/11/13/PHP简单基础/index.html">
+<meta property="og:site_name" content="web前端">
+<meta property="og:description" content="PHP简介PHP（外文名:PHP: Hypertext Preprocessor，中文名：超文本预处理器，是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Java、Perl自创的语法。它可以比CGI或者Perl更快速地执行动态网页。用PHP做出的动态页面与其他的编程语言相比，PHP是将程序嵌入到HTML（">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-11-13T12:18:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP简单基础">
+<meta name="twitter:description" content="PHP简介PHP（外文名:PHP: Hypertext Preprocessor，中文名：超文本预处理器，是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Java、Perl自创的语法。它可以比CGI或者Perl更快速地执行动态网页。用PHP做出的动态页面与其他的编程语言相比，PHP是将程序嵌入到HTML（">
+  
+    <link rel="alternate" href="/atom.xml" title="web前端" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">web前端</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">前端一些简单的基础</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-PHP简单基础" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/13/PHP简单基础/" class="article-date">
+  <time datetime="2017-11-13T12:11:24.000Z" itemprop="datePublished">2017-11-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PHP简单基础
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="PHP简介"><a href="#PHP简介" class="headerlink" title="PHP简介"></a>PHP简介</h3><p>PHP（外文名:PHP: Hypertext Preprocessor，中文名：超文本预处理器，是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Java、Perl自创的语法。它可以比CGI或者Perl更快速地执行动态网页。用PHP做出的动态页面与其他的编程语言相比，PHP是将程序嵌入到HTML（标准通用标记语言)下的一个应用）文档中去执行，执行效率比完全生成HTML标记的CGI要高许多；PHP还可以执行编译后代码，编译可以达到加密和优化代码运行，使代码运行更快。</p>
+<p>###PHP语言标签 注意事项</p>
+<ul>
+<li>开头必须是英文字母或下划线</li>
+<li>结尾必须要有分号</li>
+<li>定义元素是在前面加上$</li>
+<li>输出数组用print_r()</li>
+<li>输出其他的一般用echo +要输出的内容<h3 id="PHP数据类型"><a href="#PHP数据类型" class="headerlink" title="PHP数据类型"></a>PHP数据类型</h3></li>
+<li><p>数字类型</p>
+<pre><code>$number=1；
+ $number=0123；//代表八进制的数
+ $number=0x123;代表16进制的数
+</code></pre></li>
+<li>字符串类型<br>1.创建字符串三种形式<br>(1)$string=”luxp”;<br>  $string1=”string $string”//双引号里的变量会被解析<br>(2)$string2=’string $string’//单引号里的变量不会被解析<br>(3)$string3=&lt;&lt;&lt;EOF<pre><code>string $name
+string $name
+</code></pre>EOF;//可以写多行且不会被解析<br>2.字符串连接<br>$name=”luxp”;<br>$welcome=”欢迎”.$name.”来这里”;<br>当字符串中包含了双引号或者单引号时需要转义<br>$name.=”欢迎来这里\” $name \””;</li>
+<li><p>数组<br>数字下标与键名下标都是数组<br>1.一维数组</p>
+<pre><code>$array=array();
+$array[1]=&quot;数组1&quot;;
+$array[2]=&quot;数组2&quot;;
+$array[&apos;no1&apos;]=&quot;关联数组1&quot;;
+$array[&apos;no2&apos;]=&quot;关联数组2&quot;;
+$array[]     =&quot;数组3&quot;;
+$array[]     =&quot;数组4&quot;;//如果为空，取当前最大下标自动加1
+$array[6]     =&quot;数组6&quot;;//可以任意指定键值
+print_r($array);
+echo $array[&apos;no1&apos;];
+$string=&quot;adujskg&quot;;
+echo $string[2];//字符串可以向数字一样取值
+//相同的键名取加号前面的数组
+$arr1=array(&quot;one&quot;=&gt;1,&quot;two&quot;=&gt;2,&quot;three&quot;=&gt;3);
+$arr2=array(&quot;three&quot;=&gt;4,&quot;four&quot;=&gt;5,&quot;five&quot;=&gt;6);
+print_r($arr2);
+$arr=$arr1+$arr2;
+print_r($arr);    
+</code></pre></li>
+</ul>
+<p>2.二维数组</p>
+<pre><code>$array[&apos;no1&apos;]=array(1,2,3,4);
+</code></pre><ul>
+<li><p>布尔类型</p>
+<pre><code>$result=true;
+$result=false;
+</code></pre></li>
+<li><p>数据类型转换<br>PHP是一个弱类型语言，声明变量不需要明确指定类型，并且变量在程序执行过程中可以被赋值任意类型<br>$num=”10 sss”;//当一个字符串与数字相加时，会自动转化成数字类型，转化成合法的十进制数字，编程时尽量避免混淆的语法</p>
+<pre><code>$num=&quot;10 sss&quot;;
+$num=$num+100;
+</code></pre><p>输出结果是110<br>###PHP运算符类型</p>
+</li>
+<li>条件语句 if<br>PHP条件语句和JS语句语法相同<br>1.if(条件){条件正确时是执行的语句}else{不满足条件时执行的语句}<br>2.浮点数存在精度问题，不能直接相比较<br>3.当需要判断类型的时候，一定要用全等于===<br>4.在判断时存在取反就是在条件前面加入!,当条件成立时则条件不成立，反之成立<br>4.当条件的键值为0 “0” 空字符 未定义类型 null这些值时，则条件是false</li>
+<li>逻辑运算符<br>或运算 前面的条件满足时后面就不会执行<br>与运算 前面的条件不满足是后面的代码就不会执行</li>
+<li><p>三目运算符</p>
+<pre><code>$a=10;$b=12;
+$c=$a&gt;$b?$a:$b;
+</code></pre></li>
+<li><p>多分支语句 switch case</p>
+<p>  $weekday=8;<br>  switch($weekday){</p>
+<pre><code>case 1:
+echo &quot;周一&quot;;
+break;
+case 2:
+echo &quot;周二&quot;;
+break;
+case 3:
+echo &quot;周三&quot;;
+break;
+case 4:
+echo &quot;周四&quot;;
+break;
+case 5:
+echo &quot;周五&quot;;
+break;
+case 6:
+echo &quot;周六&quot;;
+break;
+case 7:
+echo &quot;周日&quot;;
+break;
+default:
+echo &quot;你错了&quot;;
+break;
+</code></pre><p>  }<br>输出结果是：你错了</p>
+</li>
+</ul>
+<h3 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h3><ul>
+<li><p>for循环<br>for 循环</p>
+<pre><code>for($i=0;$i&lt;10;$i++){
+  echo &quot;$i&quot;;
+}
+</code></pre><p>输出结果是0123456789</p>
+</li>
+<li><p>foreach</p>
+<pre><code>$array[0]=&quot;one&quot;;
+$array[1]=&quot;two&quot;;
+$array[2]=&quot;three&quot;;
+//foreach
+foreach($array as $key =&gt;$val){
+    echo &quot;$key =&gt;$val &lt;br&gt;&quot;;
+}
+</code></pre></li>
+<li><p>while循环</p>
+<pre><code>  $i=0;
+while($i&lt;10){
+    echo &quot;$i&lt;br&gt;&quot;;
+    $i++;
+}
+</code></pre></li>
+<li><p>do while 循环<br>do至少执行一次</p>
+<pre><code>$num=10;
+do{
+  echo &quot;$i&lt;br&gt;&quot;;
+  if($i==$num){
+      break;
+      }
+  $i++;
+}while($i);
+</code></pre><h3 id="下面举几个小例子来把PHP运用在HTML中"><a href="#下面举几个小例子来把PHP运用在HTML中" class="headerlink" title="下面举几个小例子来把PHP运用在HTML中"></a>下面举几个小例子来把PHP运用在HTML中</h3></li>
+<li><p>简单粗暴的日历表</p>
+<pre><code>&lt;?php
+  $lesson=array();
+  $lesson[0]=&quot;休息&quot;;
+  $lesson[1]=&quot;h5&quot;;
+  $lesson[2]=&quot;JS&quot;;
+  $lesson[3]=&quot;css&quot;;
+  $lesson[4]=&quot;php&quot;;
+  $lesson[5]=&quot;ajax&quot;;
+  $lesson[6]=&quot;json&quot;;
+?&gt;
+&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+  &lt;tr&gt;
+      &lt;td&gt;周日&lt;/td&gt;
+      &lt;td&gt;周一&lt;/td&gt;
+      &lt;td&gt;周二&lt;/td&gt;
+      &lt;td&gt;周三&lt;/td&gt;
+      &lt;td&gt;周四&lt;/td&gt;
+      &lt;td&gt;周五&lt;/td&gt;
+      &lt;td&gt;周六&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+      &lt;?php
+          foreach($lesson as $key =&gt; $val){            
+      ?&gt;
+      &lt;td&gt;&lt;?=$val?&gt;&lt;/td&gt;
+      &lt;?php }?&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre></li>
+<li><p>商品购物</p>
+<pre><code>&lt;?php
+  $shop=array();
+  $shop[0]=array(&quot;手机&quot;,&quot;$100&quot;,20);
+  $shop[1]=array(&quot;电脑&quot;,&quot;$300&quot;,20);
+  $shop[2]=array(&quot;iPad&quot;,&quot;$200&quot;,20);
+?&gt;
+&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+  &lt;tr&gt;
+      &lt;td&gt;商品名称&lt;/td&gt;
+      &lt;td&gt;商品价格&lt;/td&gt;
+      &lt;td&gt;购买数量&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;?php 
+      foreach($shop as $key =&gt;$val){
+          ?&gt;
+          &lt;tr&gt;
+              &lt;?php
+                  foreach($val as $_key=&gt;$_val){
+                      ?&gt;
+                      &lt;td&gt;&lt;?=$_val?&gt;&lt;/td&gt;
+                      &lt;?php }?&gt;
+
+          &lt;/tr&gt;
+          &lt;?php }?&gt;
+
+&lt;/table&gt;
+</code></pre></li>
+<li><p>简单的留言板</p>
+<pre><code>&lt;?php
+ $liuyan=array();
+ $reirong=array(&quot;rdishgoertgjfjytdgjjyhgjghhjjhjhjjhjhhtrtrorew&quot;,&quot;reue6ehrrttrurtytytgrt6hj8&quot;,&quot;euwtieqtrytyyeeyeructwop&quot;);
+ $liuyan[0]=array(&quot;li&quot;,&quot;xxx&quot;,&quot;1月1日&quot;);
+ $liuyan[1]=array(&quot;lisi&quot;,&quot;yyy&quot;,&quot;2月2日&quot;);
+$liuyan[2]=array(&quot;zhangsan&quot;,&quot;zzz&quot;,&quot;3月31日&quot;);
+?&gt;
+&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+  &lt;?php
+      foreach($liuyan as $key=&gt;$val){
+          ?&gt;
+          &lt;tr&gt;
+              &lt;?php
+                  foreach($val as $_key=&gt;$_val){
+                      ?&gt;
+                      &lt;td&gt;&lt;?=$_val?&gt;&lt;/td&gt;
+                  &lt;?php }?&gt;
+          &lt;/tr&gt;            
+          &lt;td colspan=&quot;3&quot;&gt;&lt;?=$reirong[$key]?&gt;&lt;/td&gt;
+      &lt;?php }?&gt;
+&lt;/table&gt;
+</code></pre></li>
+</ul>
+<h3 id="PHP函数"><a href="#PHP函数" class="headerlink" title="PHP函数"></a>PHP函数</h3><h5 id="函数注意事项"><a href="#函数注意事项" class="headerlink" title="函数注意事项"></a>函数注意事项</h5><ul>
+<li>函数 一种代码块（内存中一块区域）</li>
+<li>定义 function</li>
+<li>函数只有调用才能执行</li>
+<li><p>函数可以定义若干个参数,形参可以设定默认值。具有默认值的不能排在无默认值前面</p>
+<h5 id="举例说明"><a href="#举例说明" class="headerlink" title="举例说明"></a>举例说明</h5><pre><code>function myfunction($param2,$param=&quot;lxx&quot;){
+  echo $param.&quot;hello word&quot;;
+}
+myfunction(1);
+</code></pre><p>输出结果为：lxxhello word</p>
+<p>  function getfunc(){</p>
+<pre><code>$array=array();
+for($i=0;$i&lt;10;$i++){
+</code></pre><p>  //            如果使用外部变量必须使用use($i),不使用的话是获取不到i的值的</p>
+<pre><code>    $array[$i]=function()use($i){
+        return 10+$i;
+    };
+}
+return $array;
+</code></pre><p>  }<br>  //$funcArray是一组函数<br>  $funcArray=getfunc();<br>  echo $funcArray<a href="">3</a>;<br>输出结果为：13</p>
+</li>
+<li><p>函数体内部定义的变量只在函数体内有效<br>在函数体内部使用global关键字，将变量定义为全局变量</p>
+<pre><code>function addfunc($a){
+  global $a;
+echo $a=$a-3;//输出结果为7
+}
+addfunc($a);
+  echo $a;//输出结果为7
+</code></pre></li>
+<li><p>引用传参<br>函数名不能重复<br>引用传参在形参前面添加&amp;符<br>引用传参 ，传的是变量本身，而不是它的值</p>
+<pre><code>function myfunc_2($a){
+    $a--;
+    echo $a;//输出结果为9
+}
+$b=10;
+myfunc_2($b);
+echo $b;//输出结果为10
+
+function myfunc_2(&amp;$a){
+    $a--;
+    echo $a;//输出结果为9
+}
+$b=10;
+myfunc_2($b);
+echo $b;//输出结果为9
+</code></pre></li>
+<li><p>内置函数<br>1.empty()判定一个变量是不是存在<br>如果变量未定义返回true<br>第二种$luxp=””值为空返回true<br>第三种$luxp=0;返回true<br>第四种$luxp=”0”;返回true<br>第五种$luxp=null;返回true<br>empty()只有变量在定以后，并且赋值，且值不为空 0 “0”null false 返回false</p>
+<pre><code>$luxp=false;
+if(empty($luxp)){
+  echo &quot;&lt;br&gt;变量未定义&quot;;
+}else{
+  echo $luxp;
+}
+</code></pre><p>2.isset()<br>  $luxp;如果变量未定义返回false<br>  第二种$luxp=””值为空返回true<br>  第三种$luxp=0;返回true<br>  第四种$luxp=”0”;返回true<br>  第五种$luxp=null;返回false<br>  第五种$luxp=false/true;返回true</p>
+<pre><code>if(isset($luxp)){
+  echo &quot;变量已定义&quot;;
+}else{
+  echo &quot;变量未定义&quot;;
+}
+</code></pre></li>
+</ul>
+<h3 id="下面举例几个简单的小例子"><a href="#下面举例几个简单的小例子" class="headerlink" title="下面举例几个简单的小例子"></a>下面举例几个简单的小例子</h3><h5 id="练习一"><a href="#练习一" class="headerlink" title="练习一"></a>练习一</h5><p>要求：</p>
+<ul>
+<li>设计一个文件管理器 需求</li>
+<li>用户可以再前台上传文件</li>
+<li>不能上传PHP文件</li>
+<li>记录文件路径 文件的描述 上传时间</li>
+<li>用户每次上传完成后，将已经上传的文件使用列表形式显示在浏览器</li>
+</ul>
+<p>具体代码：</p>
+<pre><code>&lt;?php
+if(!empty($_FILES[&apos;upload&apos;])){
+    upload();    
+}
+//输入数据
+function upload(){
+    if($_FILES[&apos;upload&apos;][&apos;type&apos;]!=&quot;text/php&quot;){
+    move_uploaded_file($_FILES[&apos;upload&apos;][&apos;tmp_name&apos;],$_FILES[&apos;upload&apos;][&apos;name&apos;]);    
+    savefile();
+    }
+}
+//存储数据
+function savefile(){
+    $filelist=$_FILES[&apos;upload&apos;][&apos;name&apos;].&quot; &quot;.$_POST[&apos;content&apos;].&quot; &quot;.date(&quot;Y-m-d H:i:s&quot;).&quot;\n&quot;;
+    $fp=fopen(&quot;upload.txt&quot;,&quot;a+&quot;);
+    fwrite($fp,$filelist);
+    fclose($fp);        
+}
+//输出数据
+function outfile(){
+    $fp=fopen(&quot;upload.txt&quot;,&quot;r&quot;);
+    while(!feof($fp)){
+        $line[]=fgets($fp);
+    }
+    fclose($fp);
+    return $line;
+}
+$filess=outfile();    
+?&gt;
+  &lt;!--设置界面--&gt;
+  &lt;!--上传区--&gt;
+&lt;div id=&quot;uploadDiv&quot;&gt;
+&lt;form action=&quot;&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;    
+    &lt;input type=&quot;file&quot; name=&quot;upload&quot; value=&quot;&quot;/&gt;
+    &lt;input type=&quot;&quot; name=&quot;content&quot; value=&quot;&quot;/&gt;
+    &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;上传&quot;/&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+&lt;!--文件列表显示区--&gt;
+&lt;div id=&quot;listFile&quot;&gt;
+&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+    &lt;tr&gt;
+        &lt;td&gt;文件路径&lt;/td&gt;
+        &lt;td&gt;文件描述&lt;/td&gt;
+        &lt;td&gt;上传时间&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;?php foreach($filess as $key =&gt;$val){
+        $str=explode(&quot; &quot;,$val);
+        if(!empty($str[0])){
+        ?&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;?=$str[0] ?&gt;&lt;/td&gt;&lt;td&gt;&lt;?=$str[1] ?&gt;&lt;/td&gt;&lt;td&gt;&lt;?=$str[2] ?&gt;&lt;/td&gt;&lt;/tr&gt;
+    &lt;?php }}?&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</code></pre><h5 id="练习二"><a href="#练习二" class="headerlink" title="练习二"></a>练习二</h5><p>要求：</p>
+<ul>
+<li>菜单管理后台</li>
+<li>可以在管理页面上传菜谱的照片，设定菜谱的菜名，及价格</li>
+<li>记录到menu.txt中</li>
+</ul>
+<p>具体代码如下：</p>
+<pre><code>&lt;?php
+if(!empty($_POST[&apos;submit&apos;])){
+    $filelist=uploadmenu();
+    if($filelist){
+        savemenu();
+    }
+}
+//    上传处理
+function uploadmenu(){
+    if($_FILES[&apos;upload&apos;][&apos;type&apos;]==&quot;image/jpg&quot; || $_FILES[&apos;upload&apos;][&apos;type&apos;]==&quot;image/png&quot; || $_FILES[&apos;upload&apos;][&apos;type&apos;]==&quot;image/gif&quot; || $_FILES[&apos;upload&apos;][&apos;type&apos;]==&quot;image/jpeg&quot;){
+        if(move_uploaded_file($_FILES[&apos;upload&apos;][&apos;tmp_name&apos;],$_FILES[&apos;upload&apos;][&apos;name&apos;])){
+            return $_FILES[&apos;upload&apos;][&apos;name&apos;];
+        }else{
+            return false;
+        }
+    }
+
+}
+//    储存处理
+function savemenu(){
+    $fp=fopen(&quot;caidan.txt&quot;,&quot;a+&quot;);
+    $menuname=htmlspecialchars(trim($_POST[&apos;menuname&apos;]));
+    $price=htmlspecialchars(trim($_POST[&apos;price&apos;]));
+    $line=$_FILES[&apos;upload&apos;][&apos;name&apos;].&quot; &quot;.$menuname.&quot; &quot;.$price.&quot;\n&quot;;
+    fwrite($fp,$line);
+    fclose($fp);
+}
+//    展现处理
+function outmenu(){
+    $fp=fopen(&quot;caidan.txt&quot;,&quot;r&quot;);
+    while(!feof($fp)){
+        $line[]=fgets($fp);
+    }
+    fclose($fp);
+    return $line;
+}
+$menucount=outmenu();
+?&gt;
+&lt;!--界面--&gt;
+&lt;!--输入菜单框--&gt;
+&lt;div id=&quot;uploadmenu&quot;&gt;
+    &lt;form action=&quot;&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+        &lt;input type=&quot;file&quot; name=&quot;upload&quot; value=&quot;&quot; /&gt;
+        &lt;input type=&quot;&quot; name=&quot;menuname&quot; value=&quot;&quot; /&gt;
+        &lt;input type=&quot;&quot; name=&quot;price&quot; value=&quot;&quot; /&gt;
+        &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;提交菜单&quot;/&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+&lt;!--输出菜单框--&gt;
+&lt;div id=&quot;listmenu&quot;&gt;
+    &lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+        &lt;tr&gt;&lt;td&gt;图片&lt;/td&gt;&lt;td&gt;菜名&lt;/td&gt;&lt;td&gt;价格&lt;/td&gt;&lt;/tr&gt;
+        &lt;?php foreach($menucount as $key =&gt;$val){
+            $str=explode(&quot; &quot;,$val);
+        if(!empty($str[0])){
+                ?&gt;
+                &lt;tr&gt;&lt;td&gt;&lt;img style=&quot;width:100px;&quot; src=&quot;&lt;?=$str[0] ?&gt;&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;?=$str[1] ?&gt;&lt;/td&gt;&lt;td&gt;&lt;?=$str[2] ?&gt;&lt;/td&gt;&lt;/tr&gt;
+            &lt;?php }}?&gt;
+    &lt;/table&gt;
+&lt;/div&gt;
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/13/PHP简单基础/" data-id="cj9y5njzt0000xsyr57my0aom" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/11/06/JSON的简单使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JSON的简单使用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/13/PHP简单基础/">PHP简单基础</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/06/JSON的简单使用/">JSON的简单使用</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/23/jQuery获取元素以及CSS样式/">jQuery获取元素以及CSS样式</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/18/BOM/">BOM</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/17/window事件/">window事件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 李可利<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
