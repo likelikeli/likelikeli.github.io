@@ -5,14 +5,19 @@
   
   <title>PHP基础2 | web前端</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="cookiecookie 是存储在浏览器的一小段数据， cookie可以同时被前后台操作,cookie可以跨页面存取 cookie是不可以跨服务器访问的、cookie是有生命期的，默认是与浏览器进程相同，如果进程退出cookie会被销毁 cookie特点 以键值对的形式存储，用分号分隔你的cookie path属性指定cookie生效的路径/全站 cookie除了值其余的属性是只写 所有的cook">
+<meta property="og:type" content="article">
 <meta property="og:title" content="PHP基础2">
 <meta property="og:url" content="http://yoursite.com/2017/11/14/PHP基础2/index.html">
 <meta property="og:site_name" content="web前端">
+<meta property="og:description" content="cookiecookie 是存储在浏览器的一小段数据， cookie可以同时被前后台操作,cookie可以跨页面存取 cookie是不可以跨服务器访问的、cookie是有生命期的，默认是与浏览器进程相同，如果进程退出cookie会被销毁 cookie特点 以键值对的形式存储，用分号分隔你的cookie path属性指定cookie生效的路径/全站 cookie除了值其余的属性是只写 所有的cook">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-14T13:04:50.000Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6863738-434e002d156b2acd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-11-21T13:05:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP基础2">
+<meta name="twitter:description" content="cookiecookie 是存储在浏览器的一小段数据， cookie可以同时被前后台操作,cookie可以跨页面存取 cookie是不可以跨服务器访问的、cookie是有生命期的，默认是与浏览器进程相同，如果进程退出cookie会被销毁 cookie特点 以键值对的形式存储，用分号分隔你的cookie path属性指定cookie生效的路径/全站 cookie除了值其余的属性是只写 所有的cook">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/6863738-434e002d156b2acd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternate" href="/atom.xml" title="web前端" type="application/atom+xml">
   
@@ -87,11 +92,211 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><p>cookie 是存储在浏览器的一小段数据， cookie可以同时被前后台操作,cookie可以跨页面存取 cookie是不可以跨服务器访问的、cookie是有生命期的，默认是与浏览器进程相同，如果进程退出cookie会被销毁</p>
+<h6 id="cookie特点"><a href="#cookie特点" class="headerlink" title="cookie特点"></a>cookie特点</h6><ul>
+<li>以键值对的形式存储，用分号分隔你的cookie</li>
+<li>path属性指定cookie生效的路径/全站</li>
+<li>cookie除了值其余的属性是只写</li>
+<li>所有的cookie包含他们的属性,所占据的大小不能超过4k并不能无限制的存储</li>
+<li>数量是有限制的,浏览器下的cookie不能超过300个</li>
+<li>每个服务器不能超过20个,</li>
+<li>cookie 是不安全的,可以被客户端更改,因此不要用cookie存储重要及敏感的数据</li>
+<li>php 将所有的cookie存储在$_COOKIE数据里在后台设置cookie使用的是setcookie方法 </li>
+<li>cookie会在第二次请求时生效</li>
+</ul>
+<h6 id="封装一个函数setcookie-输入name-value-path-expires-设置一个cookie"><a href="#封装一个函数setcookie-输入name-value-path-expires-设置一个cookie" class="headerlink" title="封装一个函数setcookie 输入name value path expires 设置一个cookie"></a>封装一个函数setcookie 输入name value path expires 设置一个cookie</h6><pre><code>//path=/front:表示只在front目录下生效，包含其子目录
+//expires设定cookie的生命期,它的值是一个字符串,需要把过期日期转成日期toGMTString()
+function setcookie(name,value,path,expires){
+        var current_data=new Date();
+    //将日期设置一天之后    
+    current_data.setDate(current_data.getDate()+expires);
+    //将日期转换成GMT字符串
+    expires_str=current_data.toGMTString();
+    //设置cookie的过期日期
+    document.cookie=name+&quot;=&quot;+value+&quot;;path=&quot;+path+&quot;;sepires=&quot;+expires_str;
+    }
+    setcookie(&quot;uesr&quot;,&quot;luxps&quot;,&quot;/&quot;,1)
+</code></pre><p>###session </p>
+<h6 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h6><ul>
+<li>session数据存储在服务器端 首先使用session_start开启会话</li>
+<li>每一个会话分配一个单独的session_id</li>
+<li>该session_id传递到前台，默认的session_id名称是PHPSESSID</li>
+<li>前台只能看到session的id，不能修改session的值</li>
+<li>使用session之前要开启会话session_start()</li>
+<li>session存储在session数组$_SESSION</li>
+<li>session 存储比较安全，但是如果session数量过多会导致服务器性能下降//</li>
+</ul>
+<p>header函数输出自定义HTTP透文件<br>header(“location:url”)指定当前页面跳转的URL</p>
+<pre><code>header(&quot;location: index.html&quot;);
+</code></pre><h3 id="加密操作-保证接口的安全性"><a href="#加密操作-保证接口的安全性" class="headerlink" title="加密操作 保证接口的安全性"></a>加密操作 保证接口的安全性</h3><ul>
+<li><p>md5<br>加密md5 只能单向加密，不能解密<br>可以将任意长度字符串编程一个32位的定长的字符串</p>
+<p>  $password=”1234556”;<br>  echo md5($password);</p>
+</li>
+<li><p>sha1<br>可以将任意长度字符串编程一个32位的定长的字符串</p>
+<p>  $password=”1234556”;<br>  echo sha1($password);</p>
+</li>
+</ul>
+<h3 id="一个小例子-弹幕"><a href="#一个小例子-弹幕" class="headerlink" title="一个小例子 弹幕"></a>一个小例子 弹幕</h3><p>HTML文档<br>danmu.html </p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;style type=&quot;text/css&quot;&gt;
+            #danmu {
+
+                width: 500px;
+                height:700px;
+                position: relative;
+                overflow: hidden;
+            }
+            #wrap {
+                margin: 0 auto;
+                width: 500px;
+                height:750px;
+                background: purple;
+                text-align: center;
+            }
+            .word {
+                font-size: 25px;
+                color: greenyellow;
+                position: absolute;
+                white-space: nowrap;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id=&quot;wrap&quot;&gt;
+            &lt;!--用静态数据做出移动的效果--&gt;
+            &lt;div id=&quot;danmu&quot;&gt;
+                &lt;!--&lt;div class=&quot;show&quot;&gt;
+                    神吐槽 
+                &lt;/div&gt;--&gt;
+            &lt;/div&gt;
+            &lt;form action=&quot;&quot; method=&quot;post&quot;&gt;
+                &lt;input type=&quot;&quot;  id=&quot;word&quot; value=&quot;&quot; /&gt;
+                &lt;input type=&quot;button&quot; name=&quot; btn&quot; id=&quot;btn&quot; value=&quot;发送&quot; /&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+
+    &lt;/body&gt;
+    &lt;script src=&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        //让文字移动
+        //        var show=document.getElementsByClassName(&quot;show&quot;)[0];
+        var danmu = document.getElementById(&quot;danmu&quot;);
+        //设置一个定时器,执行文字移动
+        //向弹幕添加文字
+        var words = [];
+        function color(){
+            var r=parseInt(Math.random()*256);
+            var g=parseInt(Math.random()*256);
+            var b=parseInt(Math.random()*256);
+            var rgb=&quot;rgb(&quot;+r+&quot;,&quot;+g+&quot;,&quot;+b+&quot;)&quot;;
+            return rgb;
+        }
+        function getRand(min, max) {
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+        function addword(word) {
+            var div = document.createElement(&quot;div&quot;);
+            div.className = &quot;word&quot;;
+            div.innerHTML = word;
+            div.style.color=color();
+            div.style.left = getRand(510, 760) + &quot;px&quot;;
+            div.style.top = getRand(10, 650) + &quot;px&quot;;
+            danmu.appendChild(div);
+            words.push(div);
+        }
+        function movewords() {
+            for(i in words) {
+                words[i].style.left = parseInt(words[i].style.left) - 5 + &quot;px&quot;;
+                //                console.log(show.style.left);
+                if(parseInt(words[i].style.left) &lt;=-words[i].offsetWidth) {
+                    words[i].remove();
+                    words.splice(i, 1);
+                }
+            }
+        }
+        //向后台传送数据
+        var btn=document.getElementById(&quot;btn&quot;);
+        btn.onclick=function(){
+
+            $.ajax({
+                type:&quot;post&quot;,
+                url:&quot;danmu.php&quot;,
+                data:{&quot;word&quot;:$(&quot;#word&quot;).val()},            
+            });
+            var word=document.getElementById(&quot;word&quot;).value;
+            document.getElementById(&quot;word&quot;).value=&quot;&quot;;
+        }
+        //从后台提取数据
+        function demo(){
+            $.ajax({
+                type:&quot;get&quot;,
+                url:&quot;getdanmu.php&quot;,
+                data:{},
+                dataType:&quot;json&quot;,
+                success:function(data){
+                    console.log(data);
+                    for(i in data){
+                        addword(data[i]);
+                    }
+                }
+            });
+        }
+        setInterval(demo,3000);
+        setInterval(&quot;movewords()&quot;,30);
+        demo();
+    &lt;/script&gt;
+&lt;/html&gt;
+</code></pre><p>PHP文档<br>danmu.php </p>
+<pre><code>&lt;?php
+    //save
+    if(!empty($_POST[&apos;word&apos;])){
+        $fp=fopen(&quot;danmu.txt&quot;,&quot;a+&quot;);
+        $word=htmlspecialchars($_POST[&apos;word&apos;]);
+        fwrite($fp,$word.&quot;\n&quot;);
+        fclose($fp);
+        echo json_encode(array($word));
+    }
+?&gt;
+</code></pre><p>getdanmu.php</p>
+<pre><code>&lt;?php
+    //为前台提供全部的弹幕数据
+    $fp=fopen(&quot;danmu.txt&quot;,&quot;r&quot;);
+    $danmu=array();
+    while(!feof($fp)){
+        $line=fgets($fp);
+        if($line){
+            $danmu[]=$line;
+        }
+    }
+    fclose($fp);
+    echo json_encode($danmu);
+?&gt;
+</code></pre><p>danmu.txt</p>
+<pre><code>南有乔木，不可休思。
+汉有游女，不可求思。
+正月开岁 二月绀香 三月桃良 四月秀蔓 
+五月鸣蜩 六月精阳 七月流火 八月未央 
+九月授衣 十月获稻 葭月潜龙 腊月嘉年
+知我者谓我心忧，不知我者谓我何求。
+悠悠苍天！此何人哉？  
+死生契阔，与子成说。执子之手，与子偕老
+我想摸你的头发 
+只是简单的试探啊 
+我想给你个拥抱 
+像以前一样可以吗 
+你退半步的动作认真的吗 
+小小的动作伤害还那么大
+我不是缺你不可 而是习惯有你
+</code></pre><p>运行结果：<br><img src="http://upload-images.jianshu.io/upload_images/6863738-434e002d156b2acd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1A894901-493C-4974-80F0-3AA2CFF1AA71.png"></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/14/PHP基础2/" data-id="cja9lk9qf0002y3yrrl1rhpyr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/14/PHP基础2/" data-id="cja9mvmgg0002kmyrzsgr811k" class="article-share-link">Share</a>
       
       
     </footer>
