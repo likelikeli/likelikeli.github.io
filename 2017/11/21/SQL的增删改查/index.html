@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>清除浮动的几种方式 | web前端</title>
+  <title>SQL的增删改查 | web前端</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="清除浮动 方法一,给父级加高    height: 100px;  方法二,在浮动元素后面添加一个新的元素，添加属性clear：both     方法三,给其父级添加   overflow: hidden;   方法四,给其父级添加   overflow: auto;  方法五,让其父级一起浮动，但会产生新的浮动问题 不建议使用  方法六,父级div定义为   display：table  方法七">
+  <meta name="description" content="插入语句insert into 表名（表的字段1，表的字段2）values(字段1的值，字段2的值)；字符串类型的加上引号例如： insert into `menu`(`id`,`menuname`,`price`,`img`)value(NULL,&amp;apos;牛肉羹&amp;apos;,&amp;apos;20&amp;apos;,&amp;apos;https://ss1.bdstatic.com/70cFvXSh_Q1Yn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="清除浮动的几种方式">
-<meta property="og:url" content="http://yoursite.com/2017/10/16/清除浮动的几种方式/index.html">
+<meta property="og:title" content="SQL的增删改查">
+<meta property="og:url" content="http://yoursite.com/2017/11/21/SQL的增删改查/index.html">
 <meta property="og:site_name" content="web前端">
-<meta property="og:description" content="清除浮动 方法一,给父级加高    height: 100px;  方法二,在浮动元素后面添加一个新的元素，添加属性clear：both     方法三,给其父级添加   overflow: hidden;   方法四,给其父级添加   overflow: auto;  方法五,让其父级一起浮动，但会产生新的浮动问题 不建议使用  方法六,父级div定义为   display：table  方法七">
+<meta property="og:description" content="插入语句insert into 表名（表的字段1，表的字段2）values(字段1的值，字段2的值)；字符串类型的加上引号例如： insert into `menu`(`id`,`menuname`,`price`,`img`)value(NULL,&amp;apos;牛肉羹&amp;apos;,&amp;apos;20&amp;apos;,&amp;apos;https://ss1.bdstatic.com/70cFvXSh_Q1Yn">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-16T02:27:25.000Z">
+<meta property="og:updated_time" content="2017-11-21T12:31:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="清除浮动的几种方式">
-<meta name="twitter:description" content="清除浮动 方法一,给父级加高    height: 100px;  方法二,在浮动元素后面添加一个新的元素，添加属性clear：both     方法三,给其父级添加   overflow: hidden;   方法四,给其父级添加   overflow: auto;  方法五,让其父级一起浮动，但会产生新的浮动问题 不建议使用  方法六,父级div定义为   display：table  方法七">
+<meta name="twitter:title" content="SQL的增删改查">
+<meta name="twitter:description" content="插入语句insert into 表名（表的字段1，表的字段2）values(字段1的值，字段2的值)；字符串类型的加上引号例如： insert into `menu`(`id`,`menuname`,`price`,`img`)value(NULL,&amp;apos;牛肉羹&amp;apos;,&amp;apos;20&amp;apos;,&amp;apos;https://ss1.bdstatic.com/70cFvXSh_Q1Yn">
   
     <link rel="alternate" href="/atom.xml" title="web前端" type="application/atom+xml">
   
@@ -68,10 +68,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-清除浮动的几种方式" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-SQL的增删改查" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/10/16/清除浮动的几种方式/" class="article-date">
-  <time datetime="2017-10-16T02:18:57.000Z" itemprop="datePublished">2017-10-16</time>
+    <a href="/2017/11/21/SQL的增删改查/" class="article-date">
+  <time datetime="2017-11-21T12:26:59.000Z" itemprop="datePublished">2017-11-21</time>
 </a>
     
   </div>
@@ -82,7 +82,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      清除浮动的几种方式
+      SQL的增删改查
     </h1>
   
 
@@ -90,40 +90,39 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><ul>
-<li><p>方法一,给父级加高 </p>
-<p>  height: 100px;</p>
+        <h4 id="插入语句"><a href="#插入语句" class="headerlink" title="插入语句"></a>插入语句</h4><p>insert into 表名（表的字段1，表的字段2）values(字段1的值，字段2的值)；字符串类型的加上引号<br>例如：</p>
+<pre><code>insert into `menu`(`id`,`menuname`,`price`,`img`)value(NULL,&apos;牛肉羹&apos;,&apos;20&apos;,&apos;https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2759220099,553595254&amp;fm=27&amp;gp=0.jpg&apos;);
+</code></pre><h4 id="删除语句"><a href="#删除语句" class="headerlink" title="删除语句"></a>删除语句</h4><p>delete from 表名 where <code>name</code>=<code>luxp</code>;</p>
+<pre><code>delect from student where name=&quot;luxp&quot;;
+</code></pre><h4 id="修改语句"><a href="#修改语句" class="headerlink" title="修改语句"></a>修改语句</h4><p>update 表名 set 字段1=‘值’，字段2=‘值’ where 条件//update student set age=18 where name=’luxp’;<br>如：</p>
+<pre><code>update student set name=&apos;li&apos;,age=15,where name=&apos;luxp&apos;;
+</code></pre><h4 id="查询语句"><a href="#查询语句" class="headerlink" title="查询语句"></a>查询语句</h4><p>我们用的最多的而且最重要的就是查询语句</p>
+<ul>
+<li>select 字段1，字段2….from 表名 where 条件</li>
+<li>SELECT * FROM student limit 1,2<br>limit 1代表只查询记录中的一条<br>limit 5代表查询记录中的5条<br>limit start,size 从start位置开始查询size条<br>带查询条件的查询语句<br>select 字段 from 表名 where 条件 limit start ，size;</li>
+<li><p>排序 order by<br>desc根据字段的值降序<br>默认的是asc升序</p>
+<pre><code>select * from student where city=&quot;北京&quot; order by asc limit 1,2;
+</code></pre></li>
+<li><p>分组统计查询<br>select count(<em>)from 表名 //获得所有的行数<br>select count(</em>) as num from 表名 //将count接口作为一个字段名检索<br>分组group by 字段名 根据某个字段进行分组查询</p>
+<pre><code>select city,count(*) as num from student group by city
+</code></pre></li>
+<li><p>索引可以提供查询速度，可以降低插入，修改速度</p>
 </li>
-<li><p>方法二,在浮动元素后面添加一个新的元素，添加属性clear：both</p>
-  <div style="clear:both"></div>
-</li>
-<li><p>方法三,给其父级添加</p>
-<p>  overflow: hidden; </p>
-</li>
-<li><p>方法四,给其父级添加</p>
-<p>  overflow: auto;</p>
-</li>
-<li><p>方法五,让其父级一起浮动，但会产生新的浮动问题 不建议使用</p>
-</li>
-<li><p>方法六,父级div定义为</p>
-<p>  display：table</p>
-</li>
-<li><p>方法七,添加伪元素来清除浮动,常用这来清除浮动</p>
-<pre><code>.div1::after{
-       content:&quot;&quot;;
-       display: block;
-       clear:both;
-   }
-   .div1::after{
-       zoom:1;
-   }
+<li><p>求和 sum()</p>
+<pre><code>select sum(age) as num from student where 1;
+</code></pre></li>
+<li><p>求平均值avg()//求年龄的平均值</p>
+<pre><code>select avg(age) from student;
+</code></pre></li>
+<li><p>查最大值和最小值max(age)min(age);</p>
+<pre><code>select max(age),min(age) from student;
 </code></pre></li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/清除浮动的几种方式/" data-id="cja9lk9ry000gy3yrd3ab5lb3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/21/SQL的增删改查/" data-id="cja9lk9rw000fy3yrolk58eu5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -132,19 +131,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/10/16/CSS样式-文字设置/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          CSS样式-文字设置
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/10/16/选择器/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/11/14/PHP基础2/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">选择器</div>
+      <div class="article-nav-title">PHP基础2</div>
     </a>
   
 </nav>

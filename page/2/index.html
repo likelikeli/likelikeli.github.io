@@ -66,6 +66,235 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-选择器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/16/选择器/" class="article-date">
+  <time datetime="2017-10-16T02:02:48.000Z" itemprop="datePublished">2017-10-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/16/选择器/">选择器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h3><pre><code>基础选择器-统配选择器
+*作用于所有标签，无论你有没有写，有没有在文档当中出现
+基础选择器-标签选择器（tags）,作用于一类标签，方式是通过标签名称
+基础选择器-群组选择器，用于优化代码，减少文档体积
+基础选择器-类选择器 .类名称
+可以用于各种场景，是我们最常用的选择器，class名可以多个，多个class名用空格隔开。主要用于具有相同样式的元素
+后代选择器  选择器1 选择器2 ...只作用于最后一个选择器，前面的选择器只是过滤条件，帮助我们定位
+div&gt;p 子代选择器 选择的是直接子集，如例所示：选择的是p标签，父级是div的p的标签
+div+p 兄弟毗邻选择器，紧跟在div后面的p标签 ，中间不能有其他标签
+div ~p 跟在div后面的所有p标签，同级
+</code></pre><h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><pre><code>p[title]{}带有title属性的p标签 
+p[title]{}带有title属性的p标签且title属性值为s1的p标签
+p[title*=s]{}title 属性包含s的属性
+p[title$=text]{}title属性必须有text结尾的p标签
+p[title^=text]{}title属性必须有text开头的p标签        
+</code></pre><h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><pre><code>p:nth-child(1)在同级里面，找到第一个p标签，并且是p标签，然后赋值样式
+p:first-child{};第一个p标签
+p:last-child{};最后一个p标签
+p:only-child{};p标签只有一个时候不能有同级元素，独生子
+p:nth-of-type(){}顺序只会看p标签顺序，不管其他标签;
+p:first-of-type{};第一个p标签
+p:last-of-type{};最后一个p标签
+p:only-of-type{};选择属于其父元素唯一的 &lt;p&gt; 元素的每个 &lt;p&gt; 元素
+p:nth-last-of-type(n){};最后第n个  p标签
+input:checked{}被选中的复选框，或者单选框
+p:first-letter对首字母进行设置
+p:first-line对首行进行设置 
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/16/选择器/" data-id="cja9lk9s4000iy3yryt1fzhqo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-事件对象" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/14/事件对象/" class="article-date">
+  <time datetime="2017-10-14T02:46:33.000Z" itemprop="datePublished">2017-10-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/14/事件对象/">事件对象</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="键盘事件对象"><a href="#键盘事件对象" class="headerlink" title="键盘事件对象"></a>键盘事件对象</h3><p>keydown支持特殊按键，比如ALT CTRL Command等等，但不区分大小写A和a的keyCode都是65<br>keypress不支持特殊按键，但区分大小写</p>
+<pre><code>document.onkeydown=function(){
+    // 获取事件对象可以使用window.event。 注意：在火狐获取不到
+    console.log(window.event);
+    // 在火狐需要通过参数获取
+    //console.log(ev);
+    // 兼容性的写法
+    var evObj=window.event || ev ;
+    console.log(evObj.keyCode);
+    // 如何判断是否按了组合键
+    if(evObj.keyCode==67 &amp;&amp; evObj.metaKey){
+        console.log(&quot;按了commond+c&quot;)
+    }
+</code></pre><p>一个简单的键盘事件小例子，利用方向键使div移动</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;使用方向键使div移动&lt;/title&gt;
+        &lt;style type=&quot;text/css&quot;&gt;
+            body{
+                margin: 0 auto;
+                position: relative;
+            }
+            .redDiv{
+                width: 100px;
+                height: 100px;
+                background: red;
+                position: absolute;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;redDiv&quot;&gt;&lt;/div&gt;
+    &lt;/body&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        var redDiv=document.getElementsByClassName(&quot;redDiv&quot;)[0];
+        var boolArr=[false,false,false,false];
+        document.onkeydown=function(ev){
+            var evObj=window.event || ev ;
+            boolArr[evObj.keyCode-37]=true;
+        }
+        document.onkeyup=function(ev){
+            var evObj=window.event || ev ;
+            boolArr[evObj.keyCode-37]=false;
+        }
+        setInterval(function(){
+            var speed=5;
+            var leftSpeed=(boolArr[2]-boolArr[0])*speed;
+            var topSpeed=(boolArr[3]-boolArr[1])*speed;
+            redDiv.style.left=redDiv.offsetLeft+leftSpeed+&quot;px&quot;;
+            redDiv.style.top=redDiv.offsetTop+topSpeed+&quot;px&quot;;
+        },20)
+    &lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h3 id="鼠标事件对象"><a href="#鼠标事件对象" class="headerlink" title="鼠标事件对象"></a>鼠标事件对象</h3><pre><code>var box=document.getElementsByClassName(&quot;box&quot;)[0];
+var redDiv=document.getElementsByClassName(&quot;redDiv&quot;)[0];
+box.onclick=function(ev){
+    var evObj=window.event || ev;
+    // evObj.target触发事件的元素，不一定是绑定事件的元素
+    //console.log(evObj.target);
+    console.log(evObj.offsetY);
+    //触发事件的元素，不是绑定的元素，鼠标距离自身的Y轴距离
+    console.log(evObj.clientY);
+    //鼠标距离屏幕的Y轴的距离
+    console.log(evObj.pageY);
+    //鼠标距离页面的Y轴的距离
+}
+</code></pre><p>鼠标拖拽使元素移动</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;鼠标拖拽&lt;/title&gt;
+        &lt;style type=&quot;text/css&quot;&gt;
+            #redDiv{
+                width: 100px;
+                height: 100px;
+                background: red;
+                position: absolute;
+            }
+            body{
+                height: 2000px;
+                position: relative;
+            }
+            #box{
+                width: 600px;
+                height: 600px;
+                border: 10px solid green;
+                position: absolute;
+                top: 1000px;
+                left: 200px;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id=&quot;box&quot;&gt;
+            &lt;div id=&quot;redDiv&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;        
+    &lt;/body&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        var redDiv=document.getElementById(&quot;redDiv&quot;);
+        var box=document.getElementById(&quot;box&quot;);
+        redDiv.onmousedown=function(ev){
+            var offsetX=ev.offsetX;
+            var offsetY=ev.offsetY;
+            document.onmousemove=function(ev){
+                var evObj=window.event || ev ;
+                var x=ev.pageX-box.offsetLeft-offsetX-18;
+                var y=ev.pageY-box.offsetTop-offsetY-18;                
+                if(x&lt;0){
+                    x=0;
+                }else if(x&gt;500){
+                    x=500;
+                }
+                if(y&lt;0){
+                    y=0;
+                }else if(y&gt;500){
+                    y=500;
+                }
+                redDiv.style.left=x+&quot;px&quot;;
+                redDiv.style.top=y+&quot;px&quot;;
+            }
+        }
+        redDiv.onmouseup=function(){
+            document.onmousemove=null;
+        }
+    &lt;/script&gt;
+&lt;/html&gt;
+</code></pre><p>通过例子可以让我们更加理解知识点。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/14/事件对象/" data-id="cja9lk9qz0007y3yrw63tibio" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-事件" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/10/14/事件/" class="article-date">
@@ -161,7 +390,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/事件/" data-id="cj9y70ck30008llyrely8iqwi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/事件/" data-id="cja9lk9rg0009y3yrdo3h4ydy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -340,7 +569,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/简易版时钟/" data-id="cj9y70ckh000fllyr8qn9k8b4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/简易版时钟/" data-id="cja9lk9ru000ey3yragxju0sr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -418,7 +647,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/14/碰壁反弹/" data-id="cj9y70cka000bllyrv2wzmysv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/14/碰壁反弹/" data-id="cja9lk9rs000dy3yre21mij9w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -479,7 +708,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/13/background以及float的设置/" data-id="cj9y70cjp0004llyrvy2jucb5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/13/background以及float的设置/" data-id="cja9lk9qs0004y3yrlpt45jp4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -541,7 +770,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/13/简单的HTML基础/" data-id="cj9y70cki000gllyro8iege35" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/13/简单的HTML基础/" data-id="cja9lk9s6000jy3yrhjne7r9o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -584,7 +813,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/12/移动端布局/" data-id="cj9y70ckc000cllyrc6pe33jf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/12/移动端布局/" data-id="cja9lk9s1000hy3yrcazmuyw0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -646,7 +875,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/11/第一天大富翁/" data-id="cj9y70ckf000ellyr3e04gjtr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/11/第一天大富翁/" data-id="cja9lk9rp000by3yr1ln6ak0a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -691,7 +920,7 @@ first.onreset=function(){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/11/hello-world/" data-id="cj9y70cjs0005llyr3t67huow" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/11/hello-world/" data-id="cja9lk9r60008y3yrrl4cbwuw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -735,6 +964,14 @@ first.onreset=function(){
       <ul>
         
           <li>
+            <a href="/2017/11/21/SQL的增删改查/">SQL的增删改查</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/14/PHP基础2/">PHP基础2</a>
+          </li>
+        
+          <li>
             <a href="/2017/11/13/PHP简单基础/">PHP简单基础</a>
           </li>
         
@@ -744,14 +981,6 @@ first.onreset=function(){
         
           <li>
             <a href="/2017/10/23/jQuery获取元素以及CSS样式/">jQuery获取元素以及CSS样式</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/18/BOM/">BOM</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/17/window事件/">window事件</a>
           </li>
         
       </ul>
